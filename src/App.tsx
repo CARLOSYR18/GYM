@@ -339,7 +339,7 @@ export default function App() {
   }
 
   // ============ MAIN APP ============
-  const S: Record<string, React.CSSProperties> = {
+  const S: any = {
     app: { minHeight: "100vh", background: "#0d0d0d", color: "#fff", display: "flex", fontFamily: "'Barlow', 'Arial', sans-serif" },
     sidebar: { width: "260px", minWidth: "260px", background: "#111", borderRight: "1px solid #1e1e1e", display: "flex", flexDirection: "column", padding: "24px 16px", position: "sticky" as any, top: 0, height: "100vh", overflowY: "auto" },
     logo: { display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px", padding: "0 8px" },
