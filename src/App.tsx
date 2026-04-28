@@ -84,7 +84,7 @@ const classes: GymClass[] = [
 ];
 
 const plans = [
-  { name: "Semanal", price: 35, description: "Acceso libre por 7 días", color: "#a3e635", features: ["Acceso sala principal", "Vestuarios", "App móvil"] },
+  { name: "Semanal", price: 35, description: "Acceso libre por 7 días", color: "#ffb928", features: ["Acceso sala principal", "Vestuarios", "App móvil"] },
   { name: "Mensual", price: 120, description: "Acceso completo por 30 días", color: "#84cc16", features: ["Todo Semanal", "Clases grupales", "Seguimiento básico"] },
   { name: "Trimestral", price: 300, description: "Ahorro especial por 3 meses", color: "#65a30d", features: ["Todo Mensual", "Descuento 17%", "1 sesión personal"] },
   { name: "VIP", price: 180, description: "Rutina personalizada + asesoría", color: "#4ade80", features: ["Todo incluido", "Entrenador personal", "Plan nutricional", "Prioridad en clases"] },
@@ -356,8 +356,7 @@ if (!isLoggedIn) {
   return (
     <main style={{ minHeight: "100vh", background: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Barlow', 'Arial Black', sans-serif", padding: "16px" }}>
       <style>{`
-       @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow+Condensed:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
-
+        @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow+Condensed:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
 
         @media (max-width: 767px) {
           .login-grid { grid-template-columns: 1fr !important; }
@@ -366,69 +365,239 @@ if (!isLoggedIn) {
         }
       `}</style>
 
-      <div className="login-grid" style={{ width: "100%", maxWidth: "1100px", display: "grid", gridTemplateColumns: "1fr 1fr", borderRadius: "24px", overflow: "hidden", boxShadow: "0 0 80px rgba(255,185,40,0.16)", border: "1px solid rgba(255,255,255,0.06)" }}>
+      <div className="login-grid" style={{
+        width: "100%",
+        maxWidth: "1100px",
+        display: "grid",
+        gridTemplateColumns: "1fr 1fr",
+        borderRadius: "24px",
+        overflow: "hidden",
+        boxShadow: "0 0 80px rgba(255,185,40,0.3)",
+        border: "1px solid rgba(255,185,40,0.16)",
+      }}>
         <div className="login-image-col" style={{ position: "relative", minHeight: "600px", overflow: "hidden" }}>
-          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.88) 0%, rgba(255,185,40,0.18) 100%)" }} />
+          <img
+            src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80"
+            alt="gym"
+            style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }}
+          />
 
-          <div style={{ position: "relative", zIndex: 10, padding: "48px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+          <div style={{
+            position: "absolute",
+            inset: 0,
+            background: "linear-gradient(135deg, rgba(10,10,10,0.88) 0%, rgba(255,185,40,0.22) 100%)",
+          }} />
+
+          <div style={{
+            position: "relative",
+            zIndex: 10,
+            padding: "48px",
+            height: "100%",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
+          }}>
             <BrandLogo />
 
             <div>
-              <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "14px", letterSpacing: "4px", marginBottom: "16px", textTransform: "uppercase" }}>Sistema de gestión</p>
-              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(52px, 6vw, 72px)", fontWeight: 900, lineHeight: 0.9, color: "#fff", marginBottom: "24px", fontStyle: "italic", textTransform: "uppercase" }}>
-                SÉ FUERTE.<br /><span style={{ color: "#ffb928" }}>SÉ IMPARABLE.</span>
+              <p style={{
+                color: "#ffb928",
+                fontWeight: 700,
+                fontSize: "14px",
+                letterSpacing: "4px",
+                marginBottom: "16px",
+                textTransform: "uppercase",
+              }}>
+                Sistema de gestión
+              </p>
+
+              <h1 style={{
+                fontFamily: "'Barlow Condensed', sans-serif",
+                fontSize: "clamp(52px, 6vw, 72px)",
+                fontWeight: 900,
+                lineHeight: 0.9,
+                color: "#fff",
+                marginBottom: "24px",
+                fontStyle: "italic",
+                textTransform: "uppercase",
+              }}>
+                SÉ FUERTE.<br />
+                <span style={{ color: "#ffb928" }}>SÉ IMPARABLE.</span>
               </h1>
 
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                 {["Socios", "Pagos", "Clases", "Reportes"].map((f) => (
-                  <span key={f} style={{ background: "rgba(255,185,40,0.15)", border: "1px solid rgba(255,185,40,0.35)", color: "#ffb928", padding: "6px 16px", borderRadius: "100px", fontSize: "13px", fontWeight: 700 }}>{f}</span>
+                  <span key={f} style={{
+                    background: "rgba(255,185,40,0.15)",
+                    border: "1px solid rgba(255,185,40,0.35)",
+                    color: "#ffb928",
+                    padding: "6px 16px",
+                    borderRadius: "100px",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                  }}>
+                    {f}
+                  </span>
                 ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="login-form-col" style={{ background: "#111", padding: "48px" }}>
+        <div className="login-form-col" style={{
+          background: "#111",
+          padding: "48px",
+          borderLeft: "1px solid rgba(255,185,40,0.08)",
+        }}>
           <div style={{ marginBottom: "28px" }}>
             <BrandLogo />
           </div>
 
-          <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "13px", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>Bienvenido</p>
-          <h2 style={{ color: "#fff", fontSize: "clamp(28px, 5vw, 36px)", fontWeight: 900, marginBottom: "32px", fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase" }}>Iniciar sesión</h2>
+          <p style={{
+            color: "#ffb928",
+            fontWeight: 700,
+            fontSize: "13px",
+            letterSpacing: "3px",
+            textTransform: "uppercase",
+            marginBottom: "8px",
+          }}>
+            Bienvenido
+          </p>
+
+          <h2 style={{
+            color: "#fff",
+            fontSize: "clamp(28px, 5vw, 36px)",
+            fontWeight: 900,
+            marginBottom: "32px",
+            fontFamily: "'Barlow Condensed', sans-serif",
+            textTransform: "uppercase",
+          }}>
+            Iniciar sesión
+          </h2>
 
           <form onSubmit={handleLogin}>
             <div style={{ marginBottom: "20px" }}>
-              <label style={{ color: "#888", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", display: "block", marginBottom: "8px" }}>Usuario</label>
-              <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="admin"
-                style={{ width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "12px", padding: "14px 16px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box" as any }}
-                onFocus={(e) => e.target.style.borderColor = "#ffb928"} onBlur={(e) => e.target.style.borderColor = "#2a2a2a"} />
+              <label style={{
+                color: "#888",
+                fontSize: "12px",
+                fontWeight: 700,
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                display: "block",
+                marginBottom: "8px",
+              }}>
+                Usuario
+              </label>
+
+              <input
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="admin"
+                style={{
+                  width: "100%",
+                  background: "#1a1a1a",
+                  border: "1px solid #2a2a2a",
+                  borderRadius: "12px",
+                  padding: "14px 16px",
+                  color: "#fff",
+                  fontSize: "15px",
+                  outline: "none",
+                  boxSizing: "border-box" as any,
+                }}
+                onFocus={(e) => e.target.style.borderColor = "#ffb928"}
+                onBlur={(e) => e.target.style.borderColor = "#2a2a2a"}
+              />
             </div>
 
             <div style={{ marginBottom: "24px" }}>
-              <label style={{ color: "#888", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", display: "block", marginBottom: "8px" }}>Contraseña</label>
-              <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="••••••"
-                style={{ width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "12px", padding: "14px 16px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box" as any }}
-                onFocus={(e) => e.target.style.borderColor = "#ffb928"} onBlur={(e) => e.target.style.borderColor = "#2a2a2a"} />
+              <label style={{
+                color: "#888",
+                fontSize: "12px",
+                fontWeight: 700,
+                letterSpacing: "2px",
+                textTransform: "uppercase",
+                display: "block",
+                marginBottom: "8px",
+              }}>
+                Contraseña
+              </label>
+
+              <input
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                type="password"
+                placeholder="••••••"
+                style={{
+                  width: "100%",
+                  background: "#1a1a1a",
+                  border: "1px solid #2a2a2a",
+                  borderRadius: "12px",
+                  padding: "14px 16px",
+                  color: "#fff",
+                  fontSize: "15px",
+                  outline: "none",
+                  boxSizing: "border-box" as any,
+                }}
+                onFocus={(e) => e.target.style.borderColor = "#ffb928"}
+                onBlur={(e) => e.target.style.borderColor = "#2a2a2a"}
+              />
             </div>
 
-            {loginError && <p style={{ color: "#f87171", fontSize: "14px", marginBottom: "16px" }}>{loginError}</p>}
+            {loginError && (
+              <p style={{ color: "#f87171", fontSize: "14px", marginBottom: "16px" }}>
+                {loginError}
+              </p>
+            )}
 
-            <button type="submit" style={{ width: "100%", background: "#ffb928", color: "#000", fontWeight: 900, fontSize: "16px", padding: "15px", borderRadius: "12px", border: "none", cursor: "pointer", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "2px", textTransform: "uppercase" as any }}>
+            <button type="submit" style={{
+              width: "100%",
+              background: "#ffb928",
+              color: "#000",
+              fontWeight: 900,
+              fontSize: "16px",
+              padding: "15px",
+              borderRadius: "12px",
+              border: "none",
+              cursor: "pointer",
+              fontFamily: "'Barlow Condensed', sans-serif",
+              letterSpacing: "2px",
+              textTransform: "uppercase" as any,
+            }}>
               ENTRAR AL SISTEMA
             </button>
           </form>
 
-          <div style={{ marginTop: "32px", padding: "20px", background: "#1a1a1a", borderRadius: "12px", border: "1px solid #2a2a2a" }}>
-            <p style={{ color: "#555", fontSize: "13px", marginBottom: "8px" }}>Credenciales de prueba:</p>
-            <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "14px" }}>Admin: <span style={{ color: "#fff" }}>admin</span> / <span style={{ color: "#fff" }}>123456</span></p>
+          <div style={{
+            marginTop: "32px",
+            padding: "20px",
+            background: "rgba(255,185,40,0.06)",
+            borderRadius: "12px",
+            border: "1px solid rgba(255,185,40,0.18)",
+          }}>
+            <p style={{ color: "#777", fontSize: "13px", marginBottom: "8px" }}>
+              Credenciales de prueba:
+            </p>
+
+            <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "14px" }}>
+              Admin: <span style={{ color: "#fff" }}>admin</span> / <span style={{ color: "#fff" }}>123456</span>
+            </p>
           </div>
 
           <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
             {[{ icon: Shield, label: "Seguro" }, { icon: Zap, label: "Rápido" }, { icon: Bell, label: "Alertas" }, { icon: Award, label: "Premium" }].map(({ icon: Icon, label }) => (
-              <div key={label} style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "10px" }}>
+              <div key={label} style={{
+                background: "#1a1a1a",
+                border: "1px solid rgba(255,185,40,0.18)",
+                borderRadius: "10px",
+                padding: "12px 16px",
+                display: "flex",
+                alignItems: "center",
+                gap: "10px",
+              }}>
                 <Icon size={16} color="#ffb928" />
-                <span style={{ color: "#888", fontSize: "13px", fontWeight: 600 }}>{label}</span>
+                <span style={{ color: "#888", fontSize: "13px", fontWeight: 600 }}>
+                  {label}
+                </span>
               </div>
             ))}
           </div>
@@ -437,49 +606,84 @@ if (!isLoggedIn) {
     </main>
   );
 }
-  // ============ MAIN APP ============
-  const S: any = {
-    app: { minHeight: "100vh", background: "#0d0d0d", color: "#fff", display: "flex", fontFamily: "'Barlow', 'Arial', sans-serif", position: "relative" },
-    sidebar: {
-      width: "260px", minWidth: "260px", background: "#111", borderRight: "1px solid #1e1e1e",
-      display: "flex", flexDirection: "column", padding: "24px 16px",
-      position: isMobile ? "fixed" : "sticky" as any,
-      top: 0, left: 0,
-      height: "100vh", overflowY: "auto",
-      zIndex: 200,
-      transform: isMobile ? (sidebarOpen ? "translateX(0)" : "translateX(-100%)") : "translateX(0)",
-      transition: "transform 0.3s ease",
-    },
-    logo: { display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px", padding: "0 8px" },
-    logoIcon: { width: "42px", height: "42px", borderRadius: "12px", background: "#a3e635", display: "flex", alignItems: "center", justifyContent: "center" },
-    userCard: { background: "#1a1a1a", borderRadius: "14px", padding: "16px", marginBottom: "24px", border: "1px solid #2a2a2a" },
-    navBtn: (active: boolean): React.CSSProperties => ({ width: "100%", display: "flex", alignItems: "center", gap: "12px", padding: "11px 14px", borderRadius: "10px", border: "none", cursor: "pointer", fontSize: "14px", fontWeight: 600, transition: "all 0.2s", background: active ? "#a3e635" : "transparent", color: active ? "#000" : "#888", textAlign: "left" }),
-    main: { flex: 1, padding: isMobile ? "16px 16px 90px" : "32px", overflowY: "auto", minWidth: 0 },
-    header: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" },
-    card: { background: "#161616", border: "1px solid #222", borderRadius: "18px", padding: isMobile ? "16px" : "24px" },
-    statCard: (color: string): React.CSSProperties => ({ background: "#161616", border: "1px solid #222", borderRadius: "18px", padding: isMobile ? "16px" : "24px", borderTop: `3px solid ${color}` }),
-    badge: (status: Member["status"]): React.CSSProperties => {
-      const colors = { Activo: { bg: "rgba(163,230,53,0.15)", color: "#a3e635", border: "rgba(163,230,53,0.3)" }, Vencido: { bg: "rgba(248,113,113,0.15)", color: "#f87171", border: "rgba(248,113,113,0.3)" }, Pendiente: { bg: "rgba(251,191,36,0.15)", color: "#fbbf24", border: "rgba(251,191,36,0.3)" } };
-      return { display: "inline-flex", padding: "4px 12px", borderRadius: "100px", fontSize: "12px", fontWeight: 700, background: colors[status].bg, color: colors[status].color, border: `1px solid ${colors[status].border}` };
-    },
-    input: { width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 14px", color: "#fff", fontSize: "14px", outline: "none", boxSizing: "border-box" as any },
-    select: { width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 14px", color: "#fff", fontSize: "14px", outline: "none", boxSizing: "border-box" as any },
-    btnPrimary: { width: "100%", background: "#a3e635", color: "#000", fontWeight: 900, fontSize: "14px", padding: "13px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase" as any },
-    btnDanger: { background: "rgba(248,113,113,0.15)", color: "#f87171", border: "1px solid rgba(248,113,113,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
-    btnSuccess: { background: "rgba(163,230,53,0.15)", color: "#a3e635", border: "1px solid rgba(163,230,53,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
-    table: { width: "100%", borderCollapse: "collapse" as any, fontSize: "14px" },
-    th: { textAlign: "left" as any, padding: "12px 16px", color: "#555", fontWeight: 600, fontSize: "12px", textTransform: "uppercase" as any, letterSpacing: "1px", borderBottom: "1px solid #222" },
-    td: { padding: "14px 16px", borderBottom: "1px solid #1a1a1a", verticalAlign: "middle" as any },
-    logoutBtn: { display: "flex", alignItems: "center", gap: "10px", padding: "12px 14px", borderRadius: "10px", background: "transparent", border: "none", color: "#555", cursor: "pointer", width: "100%", fontSize: "14px", fontWeight: 600, marginTop: "auto" },
-    // Responsive grid helpers
-    grid4: { display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: isMobile ? "10px" : "16px", marginBottom: isMobile ? "16px" : "28px" },
-    grid3: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "16px" },
-    grid2: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "16px" },
-    grid2_1: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr", gap: "20px" },
-    grid1_side: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "340px 1fr", gap: "20px" },
-    grid_hero_side: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 300px", gap: "20px", marginBottom: "20px" },
-    grid_plans: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4, 1fr)", gap: "16px" },
-  };
+
+
+// ============ MAIN APP ============
+const S: any = {
+  app: { minHeight: "100vh", background: "#0d0d0d", color: "#fff", display: "flex", fontFamily: "'Barlow', 'Arial', sans-serif", position: "relative" },
+  sidebar: {
+    width: "260px", minWidth: "260px", background: "#111", borderRight: "1px solid #1e1e1e",
+    display: "flex", flexDirection: "column", padding: "24px 16px",
+    position: isMobile ? "fixed" : "sticky" as any,
+    top: 0, left: 0,
+    height: "100vh", overflowY: "auto",
+    zIndex: 200,
+    transform: isMobile ? (sidebarOpen ? "translateX(0)" : "translateX(-100%)") : "translateX(0)",
+    transition: "transform 0.3s ease",
+  },
+  logo: { display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px", padding: "0 8px" },
+  logoIcon: { width: "42px", height: "42px", borderRadius: "12px", background: "#ffb928", display: "flex", alignItems: "center", justifyContent: "center" },
+  userCard: { background: "#1a1a1a", borderRadius: "14px", padding: "16px", marginBottom: "24px", border: "1px solid #2a2a2a" },
+  navBtn: (active: boolean): React.CSSProperties => ({
+    width: "100%",
+    display: "flex",
+    alignItems: "center",
+    gap: "12px",
+    padding: "11px 14px",
+    borderRadius: "10px",
+    border: "none",
+    cursor: "pointer",
+    fontSize: "14px",
+    fontWeight: 600,
+    transition: "all 0.2s",
+    background: active ? "#ffb928" : "transparent",
+    color: active ? "#000" : "#888",
+    textAlign: "left",
+  }),
+  main: { flex: 1, padding: isMobile ? "16px 16px 90px" : "32px", overflowY: "auto", minWidth: 0 },
+  header: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" },
+  card: { background: "#161616", border: "1px solid #222", borderRadius: "18px", padding: isMobile ? "16px" : "24px" },
+  statCard: (color: string): React.CSSProperties => ({
+    background: "#161616",
+    border: "1px solid #222",
+    borderRadius: "18px",
+    padding: isMobile ? "16px" : "24px",
+    borderTop: `3px solid ${color}`,
+  }),
+  badge: (status: Member["status"]): React.CSSProperties => {
+    const colors = {
+      Activo: { bg: "rgba(255,185,40,0.15)", color: "#ffb928", border: "rgba(255,185,40,0.3)" },
+      Vencido: { bg: "rgba(248,113,113,0.15)", color: "#f87171", border: "rgba(248,113,113,0.3)" },
+      Pendiente: { bg: "rgba(251,191,36,0.15)", color: "#fbbf24", border: "rgba(251,191,36,0.3)" },
+    };
+    return {
+      display: "inline-flex",
+      padding: "4px 12px",
+      borderRadius: "100px",
+      fontSize: "12px",
+      fontWeight: 700,
+      background: colors[status].bg,
+      color: colors[status].color,
+      border: `1px solid ${colors[status].border}`,
+    };
+  },
+  input: { width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 14px", color: "#fff", fontSize: "14px", outline: "none", boxSizing: "border-box" as any },
+  select: { width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 14px", color: "#fff", fontSize: "14px", outline: "none", boxSizing: "border-box" as any },
+  btnPrimary: { width: "100%", background: "#ffb928", color: "#000", fontWeight: 900, fontSize: "14px", padding: "13px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase" as any },
+  btnDanger: { background: "rgba(248,113,113,0.15)", color: "#f87171", border: "1px solid rgba(248,113,113,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
+  btnSuccess: { background: "rgba(255,185,40,0.15)", color: "#ffb928", border: "1px solid rgba(255,185,40,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
+  table: { width: "100%", borderCollapse: "collapse" as any, fontSize: "14px" },
+  th: { textAlign: "left" as any, padding: "12px 16px", color: "#555", fontWeight: 600, fontSize: "12px", textTransform: "uppercase" as any, letterSpacing: "1px", borderBottom: "1px solid #222" },
+  td: { padding: "14px 16px", borderBottom: "1px solid #1a1a1a", verticalAlign: "middle" as any },
+  logoutBtn: { display: "flex", alignItems: "center", gap: "10px", padding: "12px 14px", borderRadius: "10px", background: "transparent", border: "none", color: "#555", cursor: "pointer", width: "100%", fontSize: "14px", fontWeight: 600, marginTop: "auto" },
+  grid4: { display: "grid", gridTemplateColumns: isMobile ? "1fr 1fr" : "repeat(4, 1fr)", gap: isMobile ? "10px" : "16px", marginBottom: isMobile ? "16px" : "28px" },
+  grid3: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "16px" },
+  grid2: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr", gap: "16px" },
+  grid2_1: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "2fr 1fr", gap: "20px" },
+  grid1_side: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "340px 1fr", gap: "20px" },
+  grid_hero_side: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "1fr 300px", gap: "20px", marginBottom: "20px" },
+  grid_plans: { display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(4, 1fr)", gap: "16px" },
+};
 
   const featuredClasses = classes.slice(0, 3);
   const services = [
@@ -504,7 +708,7 @@ if (!isLoggedIn) {
       )}
 
       {/* SIDEBAR */}
-      <aside style={S.sidebar}>
+<aside style={S.sidebar}>
   <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
     <div>
       <BrandLogo subtitle={false} />
@@ -520,30 +724,49 @@ if (!isLoggedIn) {
     )}
   </div>
 
-        <div style={S.userCard}>
-          <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#a3e635", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "10px" }}>
-            <span style={{ fontWeight: 900, color: "#000", fontSize: "16px" }}>{currentUser?.full_name?.[0]?.toUpperCase()}</span>
-          </div>
-          <div style={{ fontWeight: 700, fontSize: "14px", color: "#fff" }}>{currentUser?.full_name}</div>
-          <div style={{ fontSize: "12px", color: "#555", marginTop: "2px" }}>@{currentUser?.username}</div>
-          <span style={{ display: "inline-block", marginTop: "8px", background: "rgba(163,230,53,0.15)", color: "#a3e635", border: "1px solid rgba(163,230,53,0.3)", padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "1px" }}>{currentUser?.role}</span>
-        </div>
-        <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
-          {menu.map((item) => {
-            const Icon = item.icon;
-            return (
-              <button key={item.name} onClick={() => navigate(item.name)} style={S.navBtn(activeTab === item.name)}>
-                <Icon size={17} />
-                {item.name}
-              </button>
-            );
-          })}
-        </nav>
-        <button onClick={logout} style={S.logoutBtn}>
-          <LogOut size={17} />
-          Cerrar sesión
+  <div style={S.userCard}>
+    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#ffb928", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "10px" }}>
+      <span style={{ fontWeight: 900, color: "#000", fontSize: "16px" }}>{currentUser?.full_name?.[0]?.toUpperCase()}</span>
+    </div>
+
+    <div style={{ fontWeight: 700, fontSize: "14px", color: "#fff" }}>{currentUser?.full_name}</div>
+    <div style={{ fontSize: "12px", color: "#555", marginTop: "2px" }}>@{currentUser?.username}</div>
+
+    <span style={{
+      display: "inline-block",
+      marginTop: "8px",
+      background: "rgba(255,185,40,0.15)",
+      color: "#ffb928",
+      border: "1px solid rgba(255,185,40,0.3)",
+      padding: "3px 10px",
+      borderRadius: "100px",
+      fontSize: "11px",
+      fontWeight: 700,
+      textTransform: "uppercase",
+      letterSpacing: "1px",
+    }}>
+      {currentUser?.role}
+    </span>
+  </div>
+
+  <nav style={{ flex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
+    {menu.map((item) => {
+      const Icon = item.icon;
+      return (
+        <button key={item.name} onClick={() => navigate(item.name)} style={S.navBtn(activeTab === item.name)}>
+          <Icon size={17} />
+          {item.name}
         </button>
-      </aside>
+      );
+    })}
+  </nav>
+
+  <button onClick={logout} style={S.logoutBtn}>
+    <LogOut size={17} />
+    Cerrar sesión
+  </button>
+</aside>
+
 
       {/* MAIN CONTENT */}
       <section style={S.main}>
@@ -565,7 +788,8 @@ if (!isLoggedIn) {
             <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "#1a1a1a", border: "1px solid #2a2a2a", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
               <Bell size={16} color="#888" />
             </div>
-            <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "#a3e635", display: "flex", alignItems: "center", justifyContent: "center" }}>
+         <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "#ffb928", display: "flex", alignItems: "center", justifyContent: "center" }}>
+
               <span style={{ fontWeight: 900, color: "#000", fontSize: "15px" }}>{currentUser?.full_name?.[0]?.toUpperCase()}</span>
             </div>
           </div>
@@ -573,214 +797,227 @@ if (!isLoggedIn) {
 
         {/* ============ ADMIN DASHBOARD ============ */}
         {currentUser?.role === "admin" && activeTab === "Dashboard" && (
-          <div>
-            <div style={{ position: "relative", borderRadius: "20px", overflow: "hidden", marginBottom: "20px", height: isMobile ? "140px" : "200px" }}>
-              <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%)" }} />
-              <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "12px", letterSpacing: "3px", textTransform: "uppercase" }}>Bienvenido</p>
-                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "28px" : "40px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>{currentUser.full_name}</h3>
-              </div>
+  <div>
+    <div style={{ position: "relative", borderRadius: "20px", overflow: "hidden", marginBottom: "20px", height: isMobile ? "140px" : "200px" }}>
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%)" }} />
+      <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+        <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "12px", letterSpacing: "3px", textTransform: "uppercase" }}>Bienvenido</p>
+        <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "28px" : "40px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>
+          {currentUser.full_name}
+        </h3>
+      </div>
+    </div>
+
+    <div style={S.grid4}>
+      {[
+        { title: "Socios activos", value: activeMembers, icon: Users, color: "#ffb928" },
+        { title: "Vencidos", value: expiredMembers, icon: Activity, color: "#f87171" },
+        { title: "Pendientes", value: pendingMembers, icon: CreditCard, color: "#fbbf24" },
+        { title: "Ingresos", value: `S/ ${totalIncome}`, icon: Wallet, color: "#818cf8" },
+      ].map(({ title, value, icon: Icon, color }) => (
+        <div key={title} style={S.statCard(color)}>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+            <div>
+              <p style={{ color: "#555", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{title}</p>
+              <h3 style={{ fontSize: isMobile ? "28px" : "36px", fontWeight: 900, fontFamily: "'Barlow Condensed', sans-serif", color: "#fff", margin: 0 }}>{value}</h3>
             </div>
-            {/* 4-stat grid → 2 cols on mobile */}
-            <div style={S.grid4}>
-              {[
-                { title: "Socios activos", value: activeMembers, icon: Users, color: "#a3e635" },
-                { title: "Vencidos", value: expiredMembers, icon: Activity, color: "#f87171" },
-                { title: "Pendientes", value: pendingMembers, icon: CreditCard, color: "#fbbf24" },
-                { title: "Ingresos", value: `S/ ${totalIncome}`, icon: Wallet, color: "#818cf8" },
-              ].map(({ title, value, icon: Icon, color }) => (
-                <div key={title} style={S.statCard(color)}>
-                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                    <div>
-                      <p style={{ color: "#555", fontSize: "11px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "6px" }}>{title}</p>
-                      <h3 style={{ fontSize: isMobile ? "28px" : "36px", fontWeight: 900, fontFamily: "'Barlow Condensed', sans-serif", color: "#fff", margin: 0 }}>{value}</h3>
-                    </div>
-                    <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: `${color}20`, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                      <Icon size={18} color={color} />
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* 2-col → 1 col on mobile */}
-            <div style={S.grid2_1}>
-              <div style={S.card}>
-                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Últimos socios</h3>
-                {loading ? <p style={{ color: "#555" }}>Cargando...</p> : members.length === 0 ? (
-                  <p style={{ color: "#555" }}>No hay socios registrados.</p>
-                ) : (
-                  <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                    {members.slice(0, 5).map((m) => (
-                      <div key={m.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#1a1a1a", borderRadius: "12px", padding: "12px 14px" }}>
-                        <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
-                          <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "#a3e63520", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                            <span style={{ fontWeight: 900, color: "#a3e635", fontSize: "14px" }}>{m.name[0]}</span>
-                          </div>
-                          <div style={{ minWidth: 0 }}>
-                            <div style={{ fontWeight: 700, color: "#fff", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}</div>
-                            <div style={{ color: "#555", fontSize: "11px" }}>{m.plan} · {m.end_date}</div>
-                          </div>
-                        </div>
-                        <span style={{ ...S.badge(m.status), flexShrink: 0, marginLeft: "8px" }}>{m.status}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div style={S.card}>
-                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Rendimiento</h3>
-                {[{ label: "Ocupación gym", value: 72, color: "#a3e635" }, { label: "Pagos ok", value: 84, color: "#818cf8" }, { label: "Asistencia", value: 63, color: "#f97316" }].map(({ label, value, color }) => (
-                  <div key={label} style={{ marginBottom: "18px" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
-                      <span style={{ color: "#888", fontSize: "13px", fontWeight: 600 }}>{label}</span>
-                      <span style={{ color, fontWeight: 700, fontSize: "13px" }}>{value}%</span>
-                    </div>
-                    <div style={{ height: "6px", background: "#222", borderRadius: "100px", overflow: "hidden" }}>
-                      <div style={{ height: "100%", width: `${value}%`, background: color, borderRadius: "100px" }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: `${color}20`, display: "flex", alignItems: "center", justifyContent: "center" }}>
+              <Icon size={18} color={color} />
             </div>
           </div>
-        )}
+        </div>
+      ))}
+    </div>
 
-        {/* ============ INICIO (USUARIO) ============ */}
-        {currentUser?.role === "usuario" && activeTab === "Inicio" && (
-          <div>
-            <div style={S.grid_hero_side}>
-              {/* Hero Banner */}
-              <div style={{ position: "relative", borderRadius: "20px", overflow: "hidden", minHeight: isMobile ? "200px" : "240px" }}>
-                <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(120deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 70%, transparent 100%)" }} />
-                <div style={{ position: "relative", zIndex: 2, padding: isMobile ? "24px 20px" : "36px 40px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                  <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "8px" }}>BE STRONG · BE BEAUTIFUL</p>
-                  <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "28px" : "clamp(28px, 3.5vw, 46px)", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", lineHeight: 1.0, margin: "0 0 12px" }}>
-                    Entrena fuerte,<br />controla tu plan
-                  </h2>
-                  <button onClick={() => setActiveTab("Mi Progreso")} style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#a3e635", color: "#000", fontWeight: 900, fontSize: "13px", padding: "11px 20px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", width: "fit-content" }}>
-                    Mi progreso <ArrowRight size={14} />
-                  </button>
-                </div>
-              </div>
-
-              {/* Estado Card — hidden on mobile (shown in stats below) */}
-              {!isMobile && (
-                <div style={{ ...S.card, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", gap: "12px" }}>
-                  <p style={{ color: "#555", fontSize: "11px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase" }}>Mi estado</p>
-                  <div style={{ position: "relative", width: "110px", height: "110px" }}>
-                    <svg width="110" height="110" style={{ transform: "rotate(-90deg)" }}>
-                      <circle cx="55" cy="55" r="48" fill="none" stroke="#222" strokeWidth="8" />
-                      <circle cx="55" cy="55" r="48" fill="none" stroke="#a3e635" strokeWidth="8"
-                        strokeDasharray={`${2 * Math.PI * 48}`}
-                        strokeDashoffset={`${2 * Math.PI * 48 * (1 - (myMember ? (myMember.status === "Activo" ? 0.85 : myMember.status === "Pendiente" ? 0.4 : 0.1) : 0.05))}`}
-                        strokeLinecap="round" />
-                    </svg>
-                    <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
-                      <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "26px", fontWeight: 900, color: "#fff" }}>
-                        {myMember ? (myMember.status === "Activo" ? "85%" : myMember.status === "Pendiente" ? "40%" : "10%") : "0%"}
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, color: myMember?.status === "Activo" ? "#a3e635" : myMember?.status === "Pendiente" ? "#fbbf24" : "#f87171" }}>
-                      {myMember?.status || "Sin plan"}
-                    </div>
-                    <div style={{ color: "#555", fontSize: "12px", marginTop: "4px" }}>Plan: <span style={{ color: "#888", fontWeight: 700 }}>{myMember?.plan || "No asignado"}</span></div>
-                  </div>
-                  {daysRemaining !== null && (
-                    <div style={{ background: daysRemaining > 7 ? "rgba(163,230,53,0.1)" : "rgba(248,113,113,0.1)", border: `1px solid ${daysRemaining > 7 ? "rgba(163,230,53,0.25)" : "rgba(248,113,113,0.25)"}`, borderRadius: "10px", padding: "8px 14px", width: "100%" }}>
-                      <span style={{ color: daysRemaining > 7 ? "#a3e635" : "#f87171", fontWeight: 700, fontSize: "13px" }}>
-                        {daysRemaining > 0 ? `${daysRemaining} días restantes` : "¡Vencido!"}
-                      </span>
-                    </div>
-                  )}
-                </div>
-              )}
-            </div>
-
-            {/* Quick stats: 2 cols on mobile, 4 on desktop */}
-            <div style={{ ...S.grid4, marginBottom: "16px" }}>
-              {[
-                { label: "Calorías", value: "850 kcal", icon: Flame, color: "#f97316" },
-                { label: "Rutina", value: myMember?.plan === "VIP" ? "Personal" : "Pecho + Tríceps", icon: Dumbbell, color: "#a3e635" },
-                { label: "Entrenos", value: "4 esta semana", icon: Activity, color: "#818cf8" },
-                { label: "Meta", value: "73% completado", icon: Trophy, color: "#fbbf24" },
-              ].map(({ label, value, icon: Icon, color }) => (
-                <div key={label} style={{ background: "#161616", border: "1px solid #222", borderRadius: "16px", padding: "14px", display: "flex", alignItems: "center", gap: "12px" }}>
-                  <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: `${color}18`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <Icon size={18} color={color} />
+    <div style={S.grid2_1}>
+      <div style={S.card}>
+        <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Últimos socios</h3>
+        {loading ? <p style={{ color: "#555" }}>Cargando...</p> : members.length === 0 ? (
+          <p style={{ color: "#555" }}>No hay socios registrados.</p>
+        ) : (
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {members.slice(0, 5).map((m) => (
+              <div key={m.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#1a1a1a", borderRadius: "12px", padding: "12px 14px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
+                  <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(255,185,40,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span style={{ fontWeight: 900, color: "#ffb928", fontSize: "14px" }}>{m.name[0]}</span>
                   </div>
                   <div style={{ minWidth: 0 }}>
-                    <p style={{ color: "#555", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 3px" }}>{label}</p>
-                    <p style={{ color: "#fff", fontSize: "13px", fontWeight: 900, margin: 0, fontFamily: "'Barlow Condensed', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{value}</p>
+                    <div style={{ fontWeight: 700, color: "#fff", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}</div>
+                    <div style={{ color: "#555", fontSize: "11px" }}>{m.plan} · {m.end_date}</div>
                   </div>
                 </div>
-              ))}
-            </div>
-
-            {/* Clases + Servicios → stack on mobile */}
-            <div style={S.grid2}>
-              <div style={S.card}>
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-                  <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", margin: 0 }}>Clases destacadas</h3>
-                  <button onClick={() => setActiveTab("Clases")} style={{ background: "none", border: "none", color: "#a3e635", fontSize: "12px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>Ver todas <ArrowRight size={13} /></button>
-                </div>
-                <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-                  {featuredClasses.map((cls) => (
-                    <div key={cls.id} style={{ display: "flex", alignItems: "center", gap: "12px", background: "#1a1a1a", borderRadius: "12px", overflow: "hidden" }}>
-                      <img src={cls.image} alt={cls.name} style={{ width: "60px", height: "54px", objectFit: "cover", flexShrink: 0 }} />
-                      <div style={{ flex: 1, padding: "4px 0", minWidth: 0 }}>
-                        <div style={{ fontWeight: 800, color: "#fff", fontSize: "13px" }}>{cls.name}</div>
-                        <div style={{ color: "#555", fontSize: "11px" }}>{cls.trainer} · {cls.time}</div>
-                      </div>
-                      <div style={{ padding: "0 12px", textAlign: "right", flexShrink: 0 }}>
-                        <span style={{ background: "#a3e63520", color: "#a3e635", border: "1px solid #a3e63530", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>{cls.category}</span>
-                        <div style={{ color: "#555", fontSize: "10px", marginTop: "3px" }}>{cls.enrolled}/{cls.capacity}</div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <span style={{ ...S.badge(m.status), flexShrink: 0, marginLeft: "8px" }}>{m.status}</span>
               </div>
-
-              <div style={S.card}>
-                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 14px" }}>Servicios</h3>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px", marginBottom: "14px" }}>
-                  {services.map((srv) => (
-                    <div key={srv.name} style={{ borderRadius: "10px", overflow: "hidden", position: "relative", height: "80px", cursor: "pointer" }}>
-                      <img src={srv.image} alt={srv.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%)" }} />
-                      <div style={{ position: "absolute", bottom: "6px", left: "8px" }}>
-                        <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, color: "#fff", fontSize: "12px", textTransform: "uppercase" }}>{srv.name}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
-                  {[
-                    { label: "Rutinas", tab: "Rutinas", color: "#a3e635" },
-                    { label: "Nutrición", tab: "Nutrición", color: "#f97316" },
-                    { label: "Horarios", tab: "Horarios", color: "#818cf8" },
-                    { label: "Logros", tab: "Logros", color: "#fbbf24" },
-                  ].map(({ label, tab, color }) => (
-                    <button key={label} onClick={() => setActiveTab(tab)}
-                      style={{ background: `${color}12`, border: `1px solid ${color}30`, borderRadius: "10px", padding: "10px 12px", color, fontWeight: 700, fontSize: "13px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                      {label} <ArrowRight size={12} />
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         )}
+      </div>
+
+      <div style={S.card}>
+        <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Rendimiento</h3>
+        {[
+          { label: "Ocupación gym", value: 72, color: "#ffb928" },
+          { label: "Pagos ok", value: 84, color: "#818cf8" },
+          { label: "Asistencia", value: 63, color: "#f97316" },
+        ].map(({ label, value, color }) => (
+          <div key={label} style={{ marginBottom: "18px" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "6px" }}>
+              <span style={{ color: "#888", fontSize: "13px", fontWeight: 600 }}>{label}</span>
+              <span style={{ color, fontWeight: 700, fontSize: "13px" }}>{value}%</span>
+            </div>
+            <div style={{ height: "6px", background: "#222", borderRadius: "100px", overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${value}%`, background: color, borderRadius: "100px" }} />
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+)}
+
+
+        {/* ============ INICIO (USUARIO) ============ */}
+       {currentUser?.role === "usuario" && activeTab === "Inicio" && (
+  <div>
+    <div style={S.grid_hero_side}>
+      {/* Hero Banner */}
+      <div style={{ position: "relative", borderRadius: "20px", overflow: "hidden", minHeight: isMobile ? "200px" : "240px" }}>
+        <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(120deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 70%, transparent 100%)" }} />
+        <div style={{ position: "relative", zIndex: 2, padding: isMobile ? "24px 20px" : "36px 40px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
+          <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "8px" }}>BE STRONG · BE BEAUTIFUL</p>
+          <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "28px" : "clamp(28px, 3.5vw, 46px)", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", lineHeight: 1.0, margin: "0 0 12px" }}>
+            Entrena fuerte,<br />controla tu plan
+          </h2>
+          <button onClick={() => setActiveTab("Mi Progreso")} style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#ffb928", color: "#000", fontWeight: 900, fontSize: "13px", padding: "11px 20px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", width: "fit-content" }}>
+            Mi progreso <ArrowRight size={14} />
+          </button>
+        </div>
+      </div>
+
+      {!isMobile && (
+        <div style={{ ...S.card, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", gap: "12px" }}>
+          <p style={{ color: "#555", fontSize: "11px", fontWeight: 700, letterSpacing: "3px", textTransform: "uppercase" }}>Mi estado</p>
+          <div style={{ position: "relative", width: "110px", height: "110px" }}>
+            <svg width="110" height="110" style={{ transform: "rotate(-90deg)" }}>
+              <circle cx="55" cy="55" r="48" fill="none" stroke="#222" strokeWidth="8" />
+              <circle
+                cx="55"
+                cy="55"
+                r="48"
+                fill="none"
+                stroke="#ffb928"
+                strokeWidth="8"
+                strokeDasharray={`${2 * Math.PI * 48}`}
+                strokeDashoffset={`${2 * Math.PI * 48 * (1 - (myMember ? (myMember.status === "Activo" ? 0.85 : myMember.status === "Pendiente" ? 0.4 : 0.1) : 0.05))}`}
+                strokeLinecap="round"
+              />
+            </svg>
+            <div style={{ position: "absolute", inset: 0, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+              <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "26px", fontWeight: 900, color: "#fff" }}>
+                {myMember ? (myMember.status === "Activo" ? "85%" : myMember.status === "Pendiente" ? "40%" : "10%") : "0%"}
+              </span>
+            </div>
+          </div>
+          <div>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, color: myMember?.status === "Activo" ? "#ffb928" : myMember?.status === "Pendiente" ? "#fbbf24" : "#f87171" }}>
+              {myMember?.status || "Sin plan"}
+            </div>
+            <div style={{ color: "#555", fontSize: "12px", marginTop: "4px" }}>Plan: <span style={{ color: "#888", fontWeight: 700 }}>{myMember?.plan || "No asignado"}</span></div>
+          </div>
+          {daysRemaining !== null && (
+            <div style={{ background: daysRemaining > 7 ? "rgba(255,185,40,0.1)" : "rgba(248,113,113,0.1)", border: `1px solid ${daysRemaining > 7 ? "rgba(255,185,40,0.25)" : "rgba(248,113,113,0.25)"}`, borderRadius: "10px", padding: "8px 14px", width: "100%" }}>
+              <span style={{ color: daysRemaining > 7 ? "#ffb928" : "#f87171", fontWeight: 700, fontSize: "13px" }}>
+                {daysRemaining > 0 ? `${daysRemaining} días restantes` : "¡Vencido!"}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+
+    <div style={{ ...S.grid4, marginBottom: "16px" }}>
+      {[
+        { label: "Calorías", value: "850 kcal", icon: Flame, color: "#f97316" },
+        { label: "Rutina", value: myMember?.plan === "VIP" ? "Personal" : "Pecho + Tríceps", icon: Dumbbell, color: "#ffb928" },
+        { label: "Entrenos", value: "4 esta semana", icon: Activity, color: "#818cf8" },
+        { label: "Meta", value: "73% completado", icon: Trophy, color: "#fbbf24" },
+      ].map(({ label, value, icon: Icon, color }) => (
+        <div key={label} style={{ background: "#161616", border: "1px solid #222", borderRadius: "16px", padding: "14px", display: "flex", alignItems: "center", gap: "12px" }}>
+          <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: `${color}18`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+            <Icon size={18} color={color} />
+          </div>
+          <div style={{ minWidth: 0 }}>
+            <p style={{ color: "#555", fontSize: "10px", fontWeight: 600, textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 3px" }}>{label}</p>
+            <p style={{ color: "#fff", fontSize: "13px", fontWeight: 900, margin: 0, fontFamily: "'Barlow Condensed', sans-serif", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{value}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div style={S.grid2}>
+      <div style={S.card}>
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+          <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", margin: 0 }}>Clases destacadas</h3>
+          <button onClick={() => setActiveTab("Clases")} style={{ background: "none", border: "none", color: "#ffb928", fontSize: "12px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>Ver todas <ArrowRight size={13} /></button>
+        </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          {featuredClasses.map((cls) => (
+            <div key={cls.id} style={{ display: "flex", alignItems: "center", gap: "12px", background: "#1a1a1a", borderRadius: "12px", overflow: "hidden" }}>
+              <img src={cls.image} alt={cls.name} style={{ width: "60px", height: "54px", objectFit: "cover", flexShrink: 0 }} />
+              <div style={{ flex: 1, padding: "4px 0", minWidth: 0 }}>
+                <div style={{ fontWeight: 800, color: "#fff", fontSize: "13px" }}>{cls.name}</div>
+                <div style={{ color: "#555", fontSize: "11px" }}>{cls.trainer} · {cls.time}</div>
+              </div>
+              <div style={{ padding: "0 12px", textAlign: "right", flexShrink: 0 }}>
+                <span style={{ background: "rgba(255,185,40,0.15)", color: "#ffb928", border: "1px solid rgba(255,185,40,0.3)", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>{cls.category}</span>
+                <div style={{ color: "#555", fontSize: "10px", marginTop: "3px" }}>{cls.enrolled}/{cls.capacity}</div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div style={S.card}>
+        <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", margin: "0 0 14px" }}>Servicios</h3>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "8px", marginBottom: "14px" }}>
+          {services.map((srv) => (
+            <div key={srv.name} style={{ borderRadius: "10px", overflow: "hidden", position: "relative", height: "80px", cursor: "pointer" }}>
+              <img src={srv.image} alt={srv.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 60%)" }} />
+              <div style={{ position: "absolute", bottom: "6px", left: "8px" }}>
+                <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, color: "#fff", fontSize: "12px", textTransform: "uppercase" }}>{srv.name}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "8px" }}>
+          {[
+            { label: "Rutinas", tab: "Rutinas", color: "#ffb928" },
+            { label: "Nutrición", tab: "Nutrición", color: "#f97316" },
+            { label: "Horarios", tab: "Horarios", color: "#818cf8" },
+            { label: "Logros", tab: "Logros", color: "#fbbf24" },
+          ].map(({ label, tab, color }) => (
+            <button key={label} onClick={() => setActiveTab(tab)}
+              style={{ background: `${color}12`, border: `1px solid ${color}30`, borderRadius: "10px", padding: "10px 12px", color, fontWeight: 700, fontSize: "13px", cursor: "pointer", textAlign: "left", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              {label} <ArrowRight size={12} />
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+)}
 
         {/* ============ SOCIOS ============ */}
         {activeTab === "Socios" && (
           <div style={S.grid1_side}>
             <div style={S.card}>
               <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-                <UserPlus size={17} color="#a3e635" /> Registrar socio
+                <UserPlus size={17} color=
+"#ffb928" /> Registrar socio
               </h3>
               <form onSubmit={addMember} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 {[{ placeholder: "Nombre completo", key: "name" }, { placeholder: "DNI", key: "dni" }, { placeholder: "Teléfono", key: "phone" }].map(({ placeholder, key }) => (
@@ -830,95 +1067,118 @@ if (!isLoggedIn) {
         )}
 
         {/* ============ PLANES ============ */}
-        {activeTab === "Planes" && (
-          <div style={S.grid_plans}>
-            {plans.map((plan, i) => (
-              <div key={plan.name} style={{ ...S.card, borderTop: `3px solid ${plan.color}`, position: "relative", overflow: "hidden" }}>
-                {i === 3 && <div style={{ position: "absolute", top: "14px", right: "14px", background: "#a3e635", color: "#000", fontSize: "10px", fontWeight: 900, padding: "3px 8px", borderRadius: "100px", letterSpacing: "1px" }}>POPULAR</div>}
-                <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "24px", fontWeight: 900, textTransform: "uppercase", color: "#fff", marginBottom: "4px" }}>{plan.name}</h3>
-                <p style={{ color: "#555", fontSize: "13px", marginBottom: "16px" }}>{plan.description}</p>
-                <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "44px", fontWeight: 900, color: plan.color, margin: "0 0 16px" }}>S/ {plan.price}</p>
-                <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-                  {plan.features.map((f) => (
-                    <div key={f} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "#888" }}>
-                      <CheckCircle2 size={13} color={plan.color} /> {f}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
+{activeTab === "Planes" && (
+  <div style={S.grid_plans}>
+    {plans.map((plan, i) => (
+      <div key={plan.name} style={{ ...S.card, borderTop: `3px solid ${plan.color}`, position: "relative", overflow: "hidden" }}>
+        {i === 3 && (
+          <div style={{ position: "absolute", top: "14px", right: "14px", background: "#ffb928", color: "#000", fontSize: "10px", fontWeight: 900, padding: "3px 8px", borderRadius: "100px", letterSpacing: "1px" }}>
+            POPULAR
           </div>
         )}
 
-        {/* ============ PAGOS (ADMIN) ============ */}
-        {activeTab === "Pagos" && (
-          <div style={S.card}>
-            <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Historial de pagos</h3>
-            <div style={{ overflowX: "auto" }}>
-              <table style={{ ...S.table, minWidth: "480px" }}>
-                <thead><tr><th style={S.th}>Cliente</th><th style={S.th}>Plan</th><th style={S.th}>Monto</th><th style={S.th}>Fecha</th><th style={S.th}>Método</th></tr></thead>
-                <tbody>
-                  {payments.map((p) => (
-                    <tr key={p.id}>
-                      <td style={S.td}><span style={{ fontWeight: 700, color: "#fff" }}>{p.member}</span></td>
-                      <td style={S.td}><span style={{ color: "#888" }}>{p.plan}</span></td>
-                      <td style={S.td}><span style={{ fontWeight: 900, color: "#a3e635" }}>S/ {p.amount}</span></td>
-                      <td style={S.td}><span style={{ color: "#555" }}>{p.date}</span></td>
-                      <td style={S.td}><span style={{ color: "#888" }}>{p.method}</span></td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+        <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "24px", fontWeight: 900, textTransform: "uppercase", color: "#fff", marginBottom: "4px" }}>{plan.name}</h3>
+        <p style={{ color: "#555", fontSize: "13px", marginBottom: "16px" }}>{plan.description}</p>
+        <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "44px", fontWeight: 900, color: plan.color, margin: "0 0 16px" }}>S/ {plan.price}</p>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+          {plan.features.map((f) => (
+            <div key={f} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "13px", color: "#888" }}>
+              <CheckCircle2 size={13} color={plan.color} /> {f}
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+{/* ============ PAGOS (ADMIN) ============ */}
+{activeTab === "Pagos" && (
+  <div style={S.card}>
+    <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>Historial de pagos</h3>
+    <div style={{ overflowX: "auto" }}>
+      <table style={{ ...S.table, minWidth: "480px" }}>
+        <thead>
+          <tr>
+            <th style={S.th}>Cliente</th>
+            <th style={S.th}>Plan</th>
+            <th style={S.th}>Monto</th>
+            <th style={S.th}>Fecha</th>
+            <th style={S.th}>Método</th>
+          </tr>
+        </thead>
+        <tbody>
+          {payments.map((p) => (
+            <tr key={p.id}>
+              <td style={S.td}><span style={{ fontWeight: 700, color: "#fff" }}>{p.member}</span></td>
+              <td style={S.td}><span style={{ color: "#888" }}>{p.plan}</span></td>
+              <td style={S.td}><span style={{ fontWeight: 900, color: "#ffb928" }}>S/ {p.amount}</span></td>
+              <td style={S.td}><span style={{ color: "#555" }}>{p.date}</span></td>
+              <td style={S.td}><span style={{ color: "#888" }}>{p.method}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+)}
+
+{/* ============ CLASES ============ */}
+{activeTab === "Clases" && (
+  <div style={S.grid2}>
+    {classes.map((cls) => (
+      <div key={cls.id} style={{ ...S.card, padding: 0, overflow: "hidden" }}>
+        <div style={{ position: "relative", height: "160px" }}>
+          <img src={cls.image} alt={cls.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 50%)" }} />
+
+          <div style={{ position: "absolute", bottom: "14px", left: "14px", right: "14px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+            <div>
+              <span style={{ background: "rgba(255,185,40,0.15)", color: "#ffb928", border: "1px solid rgba(255,185,40,0.3)", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>
+                {cls.category}
+              </span>
+              <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "22px", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>{cls.name}</h3>
+            </div>
+
+            <div style={{ background: "#ffb928", borderRadius: "50%", width: "38px", height: "38px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>
+              <Play size={15} color="#000" fill="#000" />
             </div>
           </div>
-        )}
+        </div>
 
-        {/* ============ CLASES ============ */}
-        {activeTab === "Clases" && (
-          <div style={S.grid2}>
-            {classes.map((cls) => (
-              <div key={cls.id} style={{ ...S.card, padding: 0, overflow: "hidden" }}>
-                <div style={{ position: "relative", height: "160px" }}>
-                  <img src={cls.image} alt={cls.name} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-                  <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 50%)" }} />
-                  <div style={{ position: "absolute", bottom: "14px", left: "14px", right: "14px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-                    <div>
-                      <span style={{ background: "#a3e63520", color: "#a3e635", border: "1px solid #a3e63530", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>{cls.category}</span>
-                      <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "22px", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>{cls.name}</h3>
-                    </div>
-                    <div style={{ background: "#a3e635", borderRadius: "50%", width: "38px", height: "38px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>
-                      <Play size={15} color="#000" fill="#000" />
-                    </div>
-                  </div>
-                </div>
-                <div style={{ padding: "14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-                  <div>
-                    <div style={{ color: "#555", fontSize: "11px" }}>Entrenador</div>
-                    <div style={{ fontWeight: 700, color: "#fff", fontSize: "13px" }}>{cls.trainer}</div>
-                  </div>
-                  <div style={{ textAlign: "center" }}>
-                    <div style={{ color: "#555", fontSize: "11px" }}>Horario</div>
-                    <div style={{ fontWeight: 700, color: "#a3e635", fontSize: "13px" }}>{cls.time}</div>
-                  </div>
-                  <div style={{ textAlign: "right" }}>
-                    <div style={{ color: "#555", fontSize: "11px" }}>Inscritos</div>
-                    <div style={{ fontWeight: 700, color: "#fff", fontSize: "13px" }}>{cls.enrolled}/{cls.capacity}</div>
-                    <div style={{ marginTop: "4px", height: "4px", width: "70px", background: "#222", borderRadius: "100px" }}>
-                      <div style={{ height: "100%", width: `${(cls.enrolled / cls.capacity) * 100}%`, background: cls.enrolled / cls.capacity > 0.8 ? "#f87171" : "#a3e635", borderRadius: "100px" }} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+        <div style={{ padding: "14px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+          <div>
+            <div style={{ color: "#555", fontSize: "11px" }}>Entrenador</div>
+            <div style={{ fontWeight: 700, color: "#fff", fontSize: "13px" }}>{cls.trainer}</div>
           </div>
-        )}
+
+          <div style={{ textAlign: "center" }}>
+            <div style={{ color: "#555", fontSize: "11px" }}>Horario</div>
+            <div style={{ fontWeight: 700, color: "#ffb928", fontSize: "13px" }}>{cls.time}</div>
+          </div>
+
+          <div style={{ textAlign: "right" }}>
+            <div style={{ color: "#555", fontSize: "11px" }}>Inscritos</div>
+            <div style={{ fontWeight: 700, color: "#fff", fontSize: "13px" }}>{cls.enrolled}/{cls.capacity}</div>
+            <div style={{ marginTop: "4px", height: "4px", width: "70px", background: "#222", borderRadius: "100px" }}>
+              <div style={{ height: "100%", width: `${(cls.enrolled / cls.capacity) * 100}%`, background: cls.enrolled / cls.capacity > 0.8 ? "#f87171" : "#ffb928", borderRadius: "100px" }} />
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
 
         {/* ============ USUARIOS (ADMIN) ============ */}
         {activeTab === "Usuarios" && currentUser?.role === "admin" && (
           <div style={S.grid1_side}>
             <div style={S.card}>
               <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-                <UserPlus size={17} color="#a3e635" /> Crear usuario
+                <UserPlus size={17} color=
+"#ffb928" /> Crear usuario
               </h3>
               <form onSubmit={addUser} style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                 <input placeholder="Nombre completo" value={userForm.full_name} onChange={(e) => setUserForm({ ...userForm, full_name: e.target.value })} style={S.input} />
@@ -941,7 +1201,8 @@ if (!isLoggedIn) {
                       <tr key={u.id}>
                         <td style={S.td}><span style={{ fontWeight: 700, color: "#fff" }}>{u.full_name}</span></td>
                         <td style={S.td}><span style={{ color: "#888" }}>@{u.username}</span></td>
-                        <td style={S.td}><span style={{ background: u.role === "admin" ? "#a3e63520" : "#818cf820", color: u.role === "admin" ? "#a3e635" : "#818cf8", border: `1px solid ${u.role === "admin" ? "#a3e63530" : "#818cf830"}`, padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>{u.role}</span></td>
+                        <td style={S.td}><span style={{ background: u.role === "admin" ? "#a3e63520" : "#818cf820", color: u.role === "admin" ? 
+"#ffb928" : "#818cf8", border: `1px solid ${u.role === "admin" ? "#a3e63530" : "#818cf830"}`, padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>{u.role}</span></td>
                         <td style={S.td}><button onClick={() => removeUser(u.id)} style={S.btnDanger}>Eliminar</button></td>
                       </tr>
                     ))}
@@ -959,7 +1220,8 @@ if (!isLoggedIn) {
               <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase" }}>Tu membresía</p>
+                <p style={{ color: 
+"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase" }}>Tu membresía</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>
                   {myMember ? `Plan ${myMember.plan}` : "Sin plan activo"}
                 </h3>
@@ -968,10 +1230,12 @@ if (!isLoggedIn) {
             {myMember ? (
               <div style={S.grid3}>
                 {[
-                  { title: "Socio", value: myMember.name, color: "#a3e635" },
+                  { title: "Socio", value: myMember.name, color: 
+"#ffb928" },
                   { title: "Plan", value: myMember.plan, color: "#818cf8" },
                   { title: "Estado", value: myMember.status, color: "#fbbf24" },
-                  { title: "Pago", value: `S/ ${myMember.paid}`, color: "#a3e635" },
+                  { title: "Pago", value: `S/ ${myMember.paid}`, color: 
+"#ffb928" },
                   { title: "Inicio", value: myMember.start_date, color: "#06b6d4" },
                   { title: "Vence", value: myMember.end_date, color: "#f97316" },
                 ].map(({ title, value, color }) => (
@@ -997,7 +1261,8 @@ if (!isLoggedIn) {
               <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&q=80" alt="pagos" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Historial financiero</p>
+                <p style={{ color: 
+"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Historial financiero</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "36px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Mis Pagos</h3>
               </div>
             </div>
@@ -1005,9 +1270,11 @@ if (!isLoggedIn) {
               <div>
                 <div style={S.grid3}>
                   {[
-                    { label: "Último pago", value: `S/ ${myMember.paid}`, sub: myMember.start_date, icon: CheckCircle, color: "#a3e635" },
+                    { label: "Último pago", value: `S/ ${myMember.paid}`, sub: myMember.start_date, icon: CheckCircle, color: 
+"#ffb928" },
                     { label: "Próximo pago", value: myMember.end_date, sub: `Plan ${myMember.plan}`, icon: CalendarCheck, color: "#fbbf24" },
-                    { label: "Estado de cuenta", value: myMember.status, sub: daysRemaining !== null ? (daysRemaining > 0 ? `${daysRemaining} días restantes` : "Vencido") : "—", icon: daysRemaining !== null && daysRemaining <= 0 ? AlertCircle : Shield, color: myMember.status === "Activo" ? "#a3e635" : myMember.status === "Pendiente" ? "#fbbf24" : "#f87171" },
+                    { label: "Estado de cuenta", value: myMember.status, sub: daysRemaining !== null ? (daysRemaining > 0 ? `${daysRemaining} días restantes` : "Vencido") : "—", icon: daysRemaining !== null && daysRemaining <= 0 ? AlertCircle : Shield, color: myMember.status === "Activo" ? 
+"#ffb928" : myMember.status === "Pendiente" ? "#fbbf24" : "#f87171" },
                   ].map(({ label, value, sub, icon: Icon, color }) => (
                     <div key={label} style={{ background: "#161616", border: `1px solid ${color}25`, borderRadius: "18px", padding: "20px" }}>
                       <div style={{ width: "40px", height: "40px", borderRadius: "12px", background: `${color}15`, border: `1px solid ${color}30`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "14px" }}>
@@ -1044,20 +1311,24 @@ if (!isLoggedIn) {
                   <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                     <div style={{ background: "#161616", border: "1px solid #222", borderRadius: "18px", padding: "20px", textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center", gap: "10px" }}>
                       <div style={{ width: "56px", height: "56px", borderRadius: "50%", background: "rgba(163,230,53,0.12)", border: "2px solid rgba(163,230,53,0.3)", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <Wallet size={24} color="#a3e635" />
+                        <Wallet size={24} color=
+"#ffb928" />
                       </div>
                       <div>
                         <p style={{ color: "#555", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "3px" }}>Vence el</p>
                         <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "24px", fontWeight: 900, color: "#fff", margin: "0 0 3px" }}>{myMember.end_date}</p>
-                        <p style={{ color: daysRemaining !== null && daysRemaining <= 5 ? "#f87171" : "#a3e635", fontSize: "13px", fontWeight: 700 }}>
+                        <p style={{ color: daysRemaining !== null && daysRemaining <= 5 ? "#f87171" : 
+"#ffb928", fontSize: "13px", fontWeight: 700 }}>
                           {daysRemaining !== null ? (daysRemaining > 0 ? `${daysRemaining} días restantes` : "¡Membresía vencida!") : "—"}
                         </p>
                       </div>
                     </div>
                     <div style={{ background: "rgba(163,230,53,0.06)", border: "1px solid rgba(163,230,53,0.2)", borderRadius: "16px", padding: "16px" }}>
-                      <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "6px" }}>💡 Recordatorio</p>
+                      <p style={{ color: 
+"#ffb928", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "6px" }}>💡 Recordatorio</p>
                       <p style={{ color: "#888", fontSize: "13px", lineHeight: 1.5, margin: "0 0 10px" }}>Renueva antes del vencimiento para no interrumpir tu acceso.</p>
-                      <button onClick={() => setActiveTab("Medios de Pago")} style={{ width: "100%", background: "#a3e635", color: "#000", fontWeight: 900, fontSize: "12px", padding: "10px", borderRadius: "8px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
+                      <button onClick={() => setActiveTab("Medios de Pago")} style={{ width: "100%", background: 
+"#ffb928", color: "#000", fontWeight: 900, fontSize: "12px", padding: "10px", borderRadius: "8px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
                         Ver cómo pagar <ArrowRight size={12} />
                       </button>
                     </div>
@@ -1080,13 +1351,15 @@ if (!isLoggedIn) {
               <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1200&q=80" alt="pagos" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.35) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>¿Cómo quieres pagar?</p>
+                <p style={{ color: 
+"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>¿Cómo quieres pagar?</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "36px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Medios de Pago</h3>
               </div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "16px", marginBottom: "16px" }}>
               {[
-                { title: "Efectivo", subtitle: "Pago presencial", desc: "Acércate a recepción y realiza tu pago directamente.", icon: Banknote, color: "#a3e635", steps: ["Visita recepción", "Indica tu nombre o DNI", "Paga en efectivo", "Recibe tu comprobante"], detail: "Lun – Sáb · 6:00 AM – 10:00 PM", badge: "Disponible hoy" },
+                { title: "Efectivo", subtitle: "Pago presencial", desc: "Acércate a recepción y realiza tu pago directamente.", icon: Banknote, color: 
+"#ffb928", steps: ["Visita recepción", "Indica tu nombre o DNI", "Paga en efectivo", "Recibe tu comprobante"], detail: "Lun – Sáb · 6:00 AM – 10:00 PM", badge: "Disponible hoy" },
                 { title: "Yape", subtitle: "Pago por app", desc: "Escanea el QR o envía al número y manda captura.", icon: Smartphone, color: "#a855f7", steps: ["Abre tu app Yape", "Escanea QR o busca el número", "Ingresa el monto exacto", "Envía captura al admin"], detail: "📱 +51 999 999 999", badge: "Rápido y fácil" },
                 { title: "Transferencia", subtitle: "Depósito bancario", desc: "Transfiere desde tu banco previa coordinación.", icon: CreditCard, color: "#06b6d4", steps: ["Solicita datos bancarios", "Realiza la transferencia", "Envía voucher al admin", "Espera confirmación"], detail: "Consultar en recepción", badge: "Previa coordinación" },
               ].map(({ title, subtitle, desc, icon: Icon, color, steps, detail, badge }) => (
@@ -1144,7 +1417,8 @@ if (!isLoggedIn) {
               <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Estamos aquí para ti</p>
+                <p style={{ color: 
+"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Estamos aquí para ti</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Horarios</h3>
               </div>
             </div>
@@ -1163,17 +1437,20 @@ if (!isLoggedIn) {
                   ].map(({ day, abbr, time, hours, open }, idx, arr) => (
                     <div key={day} style={{ display: "flex", alignItems: "center", gap: "12px", padding: "12px 0", borderBottom: idx < arr.length - 1 ? "1px solid #1e1e1e" : "none" }}>
                       <div style={{ width: "40px", height: "40px", borderRadius: "10px", background: open ? "rgba(163,230,53,0.1)" : "rgba(248,113,113,0.08)", border: `1px solid ${open ? "rgba(163,230,53,0.25)" : "rgba(248,113,113,0.2)"}`, display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                        <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "10px", fontWeight: 900, color: open ? "#a3e635" : "#f87171" }}>{abbr}</span>
+                        <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "10px", fontWeight: 900, color: open ? 
+"#ffb928" : "#f87171" }}>{abbr}</span>
                       </div>
                       <div style={{ flex: 1 }}>
                         <div style={{ fontWeight: 700, color: "#fff", fontSize: "14px" }}>{day}</div>
                         {open && !isMobile && (
                           <div style={{ marginTop: "4px", height: "4px", background: "#1e1e1e", borderRadius: "100px", overflow: "hidden", width: "120px" }}>
-                            <div style={{ height: "100%", width: `${(hours / 16) * 100}%`, background: "#a3e635", borderRadius: "100px" }} />
+                            <div style={{ height: "100%", width: `${(hours / 16) * 100}%`, background: 
+"#ffb928", borderRadius: "100px" }} />
                           </div>
                         )}
                       </div>
-                      <span style={{ fontWeight: 700, fontSize: "13px", color: open ? "#a3e635" : "#f87171" }}>{time}</span>
+                      <span style={{ fontWeight: 700, fontSize: "13px", color: open ? 
+"#ffb928" : "#f87171" }}>{time}</span>
                     </div>
                   ))}
                 </div>
@@ -1181,9 +1458,11 @@ if (!isLoggedIn) {
               <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
                 <div style={{ background: "linear-gradient(135deg, #1a2a0a 0%, #161616 100%)", border: "1px solid rgba(163,230,53,0.25)", borderRadius: "18px", padding: "20px", textAlign: "center" }}>
                   <div style={{ width: "44px", height: "44px", borderRadius: "50%", background: "rgba(163,230,53,0.15)", border: "2px solid rgba(163,230,53,0.4)", display: "flex", alignItems: "center", justifyContent: "center", margin: "0 auto 10px" }}>
-                    <div style={{ width: "9px", height: "9px", borderRadius: "50%", background: "#a3e635" }} />
+                    <div style={{ width: "9px", height: "9px", borderRadius: "50%", background: 
+"#ffb928" }} />
                   </div>
-                  <p style={{ color: "#a3e635", fontWeight: 900, fontSize: "15px", margin: "0 0 3px" }}>ABIERTO AHORA</p>
+                  <p style={{ color: 
+"#ffb928", fontWeight: 900, fontSize: "15px", margin: "0 0 3px" }}>ABIERTO AHORA</p>
                   <p style={{ color: "#555", fontSize: "12px", margin: 0 }}>Ven y entrena hoy</p>
                 </div>
                 {[
@@ -1212,14 +1491,16 @@ if (!isLoggedIn) {
               <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=1200&q=80" alt="progreso" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Tu evolución</p>
+                <p style={{ color: 
+"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Tu evolución</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Mi Progreso</h3>
               </div>
             </div>
             <div style={{ ...S.grid4, marginBottom: "16px" }}>
               {[
                 { label: "Sesiones", value: "12", icon: Flame, color: "#f97316", trend: "+3 vs mes ant." },
-                { label: "Calorías", value: "4,800", icon: Zap, color: "#a3e635", trend: "+12% semana" },
+                { label: "Calorías", value: "4,800", icon: Zap, color: 
+"#ffb928", trend: "+12% semana" },
                 { label: "Horas", value: "18h", icon: Clock, color: "#818cf8", trend: "Meta: 24h" },
                 { label: "Racha", value: "5 días", icon: Trophy, color: "#fbbf24", trend: "¡Récord!" },
               ].map(({ label, value, icon: Icon, color, trend }) => (
@@ -1237,13 +1518,16 @@ if (!isLoggedIn) {
               <div style={S.card}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                   <h4 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "16px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", color: "#fff", margin: 0 }}>Sesiones esta semana</h4>
-                  <span style={{ background: "rgba(163,230,53,0.12)", color: "#a3e635", border: "1px solid rgba(163,230,53,0.25)", padding: "4px 12px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>6 de 7</span>
+                  <span style={{ background: "rgba(163,230,53,0.12)", color: 
+"#ffb928", border: "1px solid rgba(163,230,53,0.25)", padding: "4px 12px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>6 de 7</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "flex-end", gap: "8px", height: "120px" }}>
                   {[{ d: "L", h: 80, min: 55 }, { d: "M", h: 60, min: 40 }, { d: "X", h: 90, min: 65 }, { d: "J", h: 45, min: 30 }, { d: "V", h: 100, min: 70 }, { d: "S", h: 70, min: 50 }, { d: "D", h: 0, min: 0 }].map(({ d, h, min }) => (
                     <div key={d} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
-                      {h > 0 && <span style={{ color: "#a3e635", fontSize: "9px", fontWeight: 700 }}>{min}m</span>}
-                      <div style={{ width: "100%", background: h > 0 ? "#a3e635" : "#1e1e1e", borderRadius: "6px 6px 0 0", height: `${Math.max(h, 4)}%`, opacity: h > 0 ? 1 : 0.4 }} />
+                      {h > 0 && <span style={{ color: 
+"#ffb928", fontSize: "9px", fontWeight: 700 }}>{min}m</span>}
+                      <div style={{ width: "100%", background: h > 0 ? 
+"#ffb928" : "#1e1e1e", borderRadius: "6px 6px 0 0", height: `${Math.max(h, 4)}%`, opacity: h > 0 ? 1 : 0.4 }} />
                       <span style={{ color: h > 0 ? "#888" : "#333", fontSize: "11px", fontWeight: 700 }}>{d}</span>
                     </div>
                   ))}
@@ -1252,7 +1536,8 @@ if (!isLoggedIn) {
               <div style={S.card}>
                 <h4 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "16px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", color: "#fff", marginBottom: "16px" }}>Metas del mes</h4>
                 {[
-                  { label: "Sesiones", current: 12, total: 20, color: "#a3e635" },
+                  { label: "Sesiones", current: 12, total: 20, color: 
+"#ffb928" },
                   { label: "Calorías", current: 4800, total: 8000, color: "#f97316" },
                   { label: "Horas", current: 18, total: 24, color: "#818cf8" },
                 ].map(({ label, current, total, color }) => {
@@ -1282,7 +1567,7 @@ if (!isLoggedIn) {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Tu Rutina Semanal</h3>
-                <p style={{ color: "#a3e635", fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Programa de fuerza e hipertrofia</p>
+                <p style={{ color: "#ffb928", fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Programa de fuerza e hipertrofia</p>
               </div>
             </div>
             <div style={S.grid2}>
@@ -1292,7 +1577,7 @@ if (!isLoggedIn) {
                   <div style={{ padding: "16px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <h4 style={{ fontWeight: 900, color: "#fff", fontSize: "15px", marginBottom: "3px" }}>{ex.name}</h4>
                     <p style={{ color: "#555", fontSize: "12px", marginBottom: "8px" }}>{ex.muscles}</p>
-                    <span style={{ background: "#a3e63520", color: "#a3e635", border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "12px", fontWeight: 700, display: "inline-block", width: "fit-content" }}>{ex.sets}</span>
+                    <span style={{ background: "#a3e63520", color: "#ffb928", border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "12px", fontWeight: 700, display: "inline-block", width: "fit-content" }}>{ex.sets}</span>
                   </div>
                 </div>
               ))}
@@ -1308,13 +1593,13 @@ if (!isLoggedIn) {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Plan Nutricional</h3>
-                <p style={{ color: "#a3e635", fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Alimentación para tu objetivo</p>
+                <p style={{ color: "#ffb928", fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Alimentación para tu objetivo</p>
               </div>
             </div>
             <div style={S.grid3}>
               {[
                 { meal: "Desayuno", time: "7:00 AM", items: ["Avena con frutas", "2 huevos revueltos", "Café o té verde"], cal: "450 kcal", color: "#f97316" },
-                { meal: "Almuerzo", time: "1:00 PM", items: ["Pollo a la plancha", "Arroz integral", "Ensalada verde"], cal: "620 kcal", color: "#a3e635" },
+                { meal: "Almuerzo", time: "1:00 PM", items: ["Pollo a la plancha", "Arroz integral", "Ensalada verde"], cal: "620 kcal", color: "#ffb928" },
                 { meal: "Cena", time: "7:30 PM", items: ["Atún o salmón", "Vegetales salteados", "Batata asada"], cal: "480 kcal", color: "#818cf8" },
               ].map(({ meal, time, items, cal, color }) => (
                 <div key={meal} style={{ ...S.card, borderTop: `3px solid ${color}` }}>
@@ -1350,11 +1635,11 @@ if (!isLoggedIn) {
               { title: "Campeón de clases", desc: "Inscrito en 10 clases grupales", icon: "🏆", earned: false },
               { title: "Plan renovado", desc: "Renovaste tu membresía sin interrupciones", icon: "♻️", earned: false },
             ].map(({ title, desc, icon, earned }) => (
-              <div key={title} style={{ ...S.card, opacity: earned ? 1 : 0.4, borderTop: earned ? "3px solid #a3e635" : "3px solid #333" }}>
+              <div key={title} style={{ ...S.card, opacity: earned ? 1 : 0.4, borderTop: earned ? "3px solid #ffb928" : "3px solid #333" }}>
                 <div style={{ fontSize: "36px", marginBottom: "10px" }}>{icon}</div>
                 <h3 style={{ fontWeight: 900, color: "#fff", fontSize: "15px", marginBottom: "6px" }}>{title}</h3>
                 <p style={{ color: "#555", fontSize: "13px", lineHeight: 1.5 }}>{desc}</p>
-                {earned && <span style={{ display: "inline-block", marginTop: "10px", background: "#a3e63520", color: "#a3e635", border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>OBTENIDO</span>}
+                {earned && <span style={{ display: "inline-block", marginTop: "10px", background: "#a3e63520", color: "#ffb928", border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>OBTENIDO</span>}
               </div>
             ))}
           </div>
@@ -1399,8 +1684,8 @@ if (!isLoggedIn) {
             return (
               <button key={item.name} onClick={() => navigate(item.name)}
                 style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: "3px", background: "none", border: "none", cursor: "pointer", padding: "8px 4px" }}>
-                <Icon size={20} color={active ? "#a3e635" : "#555"} />
-                <span style={{ fontSize: "9px", fontWeight: 700, color: active ? "#a3e635" : "#555", letterSpacing: "0.5px", textTransform: "uppercase" }}>{item.name}</span>
+                <Icon size={20} color={active ? "#ffb928" : "#555"} />
+                <span style={{ fontSize: "9px", fontWeight: 700, color: active ? "#ffb928" : "#555", letterSpacing: "0.5px", textTransform: "uppercase" }}>{item.name}</span>
               </button>
             );
           })}
