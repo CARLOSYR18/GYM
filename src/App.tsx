@@ -116,6 +116,66 @@ function useIsMobile() {
   }, []);
   return isMobile;
 }
+const BRAND_LOGO_URL = "https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/332892294_210150681562096_8657976781747435868_n.png?_nc_cat=103&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=uFtC8uT5MFUQ7kNvwHW9sT8&_nc_oc=AdrWahUc6YJ9Q8qF6VHeksDaehdMZVyg6pegolrIMpiPCItLPRr97SL7fi3BxOyjPvUjQaItH_erL406x_clVGhN&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=boP_06LgJXUfyTuTkkh0yQ&_nc_ss=7b2a8&oh=00_Af395PTFtEIQsq0sO33EKYMQuUuW9CSbfEaGNVzIDs4v8A&oe=69F6A535"; // Aqui pegas la URL de tu logo
+
+function BrandLogo({ subtitle = true }: { subtitle?: boolean }) {
+  return (
+    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+      {BRAND_LOGO_URL ? (
+        <img
+          src={BRAND_LOGO_URL}
+          alt="Pucufit Gimnasio"
+          style={{
+            width: "48px",
+            height: "48px",
+            objectFit: "contain",
+            borderRadius: "10px",
+            background: "#fff",
+          }}
+        />
+      ) : (
+        <div style={{
+          width: "48px",
+          height: "48px",
+          borderRadius: "12px",
+          background: "#ffb928",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}>
+          <Dumbbell size={24} color="#111" />
+        </div>
+      )}
+
+      <div>
+        <div style={{
+          fontFamily: "'Audiowide', 'Orbitron', sans-serif",
+          fontSize: "22px",
+          fontWeight: 900,
+          letterSpacing: "1px",
+          transform: "skewX(-8deg)",
+          lineHeight: 1,
+        }}>
+          <span style={{ color: "#ffb928" }}>Pucu</span>
+          <span style={{ color: "#ffffff" }}>fit</span>
+        </div>
+
+        {subtitle && (
+          <div style={{
+            marginTop: "6px",
+            color: "#f5f5f5",
+            fontFamily: "'Rajdhani', sans-serif",
+            fontSize: "13px",
+            fontWeight: 700,
+            letterSpacing: "4px",
+          }}>
+            GIMNASIO
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
 
 export default function App() {
   const isMobile = useIsMobile();
@@ -291,89 +351,92 @@ export default function App() {
     setActiveTab(tab);
     setSidebarOpen(false);
   };
+// ============ LOGIN SCREEN ============
+if (!isLoggedIn) {
+  return (
+    <main style={{ minHeight: "100vh", background: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Barlow', 'Arial Black', sans-serif", padding: "16px" }}>
+      <style>{`
+       @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow+Condensed:wght@700;900&family=Rajdhani:wght@500;700&display=swap');
 
-  // ============ LOGIN SCREEN ============
-  if (!isLoggedIn) {
-    return (
-      <main style={{ minHeight: "100vh", background: "#0a0a0a", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "'Barlow', 'Arial Black', sans-serif", padding: "16px" }}>
-        <style>{`
-          @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,900&family=Barlow+Condensed:wght@700;900&display=swap');
-          @media (max-width: 767px) {
-            .login-grid { grid-template-columns: 1fr !important; }
-            .login-image-col { display: none !important; }
-            .login-form-col { padding: 32px 24px !important; }
-          }
-        `}</style>
-        <div className="login-grid" style={{ width: "100%", maxWidth: "1100px", display: "grid", gridTemplateColumns: "1fr 1fr", borderRadius: "24px", overflow: "hidden", boxShadow: "0 0 80px rgba(163,230,53,0.15)", border: "1px solid rgba(255,255,255,0.06)" }}>
-          <div className="login-image-col" style={{ position: "relative", minHeight: "600px", overflow: "hidden" }}>
-            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
-            <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.85) 0%, rgba(163,230,53,0.2) 100%)" }} />
-            <div style={{ position: "relative", zIndex: 10, padding: "48px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: "#a3e635", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                  <Dumbbell size={26} color="#000" />
-                </div>
-                <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "22px", fontWeight: 900, color: "#fff", letterSpacing: "2px" }}>POWER GYM</span>
+
+        @media (max-width: 767px) {
+          .login-grid { grid-template-columns: 1fr !important; }
+          .login-image-col { display: none !important; }
+          .login-form-col { padding: 32px 24px !important; }
+        }
+      `}</style>
+
+      <div className="login-grid" style={{ width: "100%", maxWidth: "1100px", display: "grid", gridTemplateColumns: "1fr 1fr", borderRadius: "24px", overflow: "hidden", boxShadow: "0 0 80px rgba(255,185,40,0.16)", border: "1px solid rgba(255,255,255,0.06)" }}>
+        <div className="login-image-col" style={{ position: "relative", minHeight: "600px", overflow: "hidden" }}>
+          <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(135deg, rgba(10,10,10,0.88) 0%, rgba(255,185,40,0.18) 100%)" }} />
+
+          <div style={{ position: "relative", zIndex: 10, padding: "48px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
+            <BrandLogo />
+
+            <div>
+              <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "14px", letterSpacing: "4px", marginBottom: "16px", textTransform: "uppercase" }}>Sistema de gestión</p>
+              <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(52px, 6vw, 72px)", fontWeight: 900, lineHeight: 0.9, color: "#fff", marginBottom: "24px", fontStyle: "italic", textTransform: "uppercase" }}>
+                SÉ FUERTE.<br /><span style={{ color: "#ffb928" }}>SÉ IMPARABLE.</span>
+              </h1>
+
+              <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
+                {["Socios", "Pagos", "Clases", "Reportes"].map((f) => (
+                  <span key={f} style={{ background: "rgba(255,185,40,0.15)", border: "1px solid rgba(255,185,40,0.35)", color: "#ffb928", padding: "6px 16px", borderRadius: "100px", fontSize: "13px", fontWeight: 700 }}>{f}</span>
+                ))}
               </div>
-              <div>
-                <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "14px", letterSpacing: "4px", marginBottom: "16px", textTransform: "uppercase" }}>Sistema de gestión</p>
-                <h1 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "clamp(52px, 6vw, 72px)", fontWeight: 900, lineHeight: 0.9, color: "#fff", marginBottom: "24px", fontStyle: "italic", textTransform: "uppercase" }}>
-                  SÉ FUERTE.<br /><span style={{ color: "#a3e635" }}>SÉ IMPARABLE.</span>
-                </h1>
-                <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
-                  {["Socios", "Pagos", "Clases", "Reportes"].map((f) => (
-                    <span key={f} style={{ background: "rgba(163,230,53,0.15)", border: "1px solid rgba(163,230,53,0.3)", color: "#a3e635", padding: "6px 16px", borderRadius: "100px", fontSize: "13px", fontWeight: 700 }}>{f}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="login-form-col" style={{ background: "#111", padding: "48px" }}>
-            {/* Logo visible only on mobile */}
-            <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "28px" }}>
-              <div style={{ width: "38px", height: "38px", borderRadius: "10px", background: "#a3e635", display: "flex", alignItems: "center", justifyContent: "center" }}>
-                <Dumbbell size={20} color="#000" />
-              </div>
-              <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "20px", fontWeight: 900, color: "#fff", letterSpacing: "2px" }}>POWER GYM</span>
-            </div>
-            <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "13px", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>Bienvenido</p>
-            <h2 style={{ color: "#fff", fontSize: "clamp(28px, 5vw, 36px)", fontWeight: 900, marginBottom: "32px", fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase" }}>Iniciar sesión</h2>
-            <form onSubmit={handleLogin}>
-              <div style={{ marginBottom: "20px" }}>
-                <label style={{ color: "#888", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", display: "block", marginBottom: "8px" }}>Usuario</label>
-                <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="admin"
-                  style={{ width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "12px", padding: "14px 16px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box" as any }}
-                  onFocus={(e) => e.target.style.borderColor = "#a3e635"} onBlur={(e) => e.target.style.borderColor = "#2a2a2a"} />
-              </div>
-              <div style={{ marginBottom: "24px" }}>
-                <label style={{ color: "#888", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", display: "block", marginBottom: "8px" }}>Contraseña</label>
-                <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="••••••"
-                  style={{ width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "12px", padding: "14px 16px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box" as any }}
-                  onFocus={(e) => e.target.style.borderColor = "#a3e635"} onBlur={(e) => e.target.style.borderColor = "#2a2a2a"} />
-              </div>
-              {loginError && <p style={{ color: "#f87171", fontSize: "14px", marginBottom: "16px" }}>{loginError}</p>}
-              <button type="submit" style={{ width: "100%", background: "#a3e635", color: "#000", fontWeight: 900, fontSize: "16px", padding: "15px", borderRadius: "12px", border: "none", cursor: "pointer", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "2px", textTransform: "uppercase" as any }}>
-                ENTRAR AL SISTEMA
-              </button>
-            </form>
-            <div style={{ marginTop: "32px", padding: "20px", background: "#1a1a1a", borderRadius: "12px", border: "1px solid #2a2a2a" }}>
-              <p style={{ color: "#555", fontSize: "13px", marginBottom: "8px" }}>Credenciales de prueba:</p>
-              <p style={{ color: "#a3e635", fontWeight: 700, fontSize: "14px" }}>Admin: <span style={{ color: "#fff" }}>admin</span> / <span style={{ color: "#fff" }}>123456</span></p>
-            </div>
-            <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
-              {[{ icon: Shield, label: "Seguro" }, { icon: Zap, label: "Rápido" }, { icon: Bell, label: "Alertas" }, { icon: Award, label: "Premium" }].map(({ icon: Icon, label }) => (
-                <div key={label} style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "10px" }}>
-                  <Icon size={16} color="#a3e635" />
-                  <span style={{ color: "#888", fontSize: "13px", fontWeight: 600 }}>{label}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
-      </main>
-    );
-  }
 
+        <div className="login-form-col" style={{ background: "#111", padding: "48px" }}>
+          <div style={{ marginBottom: "28px" }}>
+            <BrandLogo />
+          </div>
+
+          <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "13px", letterSpacing: "3px", textTransform: "uppercase", marginBottom: "8px" }}>Bienvenido</p>
+          <h2 style={{ color: "#fff", fontSize: "clamp(28px, 5vw, 36px)", fontWeight: 900, marginBottom: "32px", fontFamily: "'Barlow Condensed', sans-serif", textTransform: "uppercase" }}>Iniciar sesión</h2>
+
+          <form onSubmit={handleLogin}>
+            <div style={{ marginBottom: "20px" }}>
+              <label style={{ color: "#888", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", display: "block", marginBottom: "8px" }}>Usuario</label>
+              <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="admin"
+                style={{ width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "12px", padding: "14px 16px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box" as any }}
+                onFocus={(e) => e.target.style.borderColor = "#ffb928"} onBlur={(e) => e.target.style.borderColor = "#2a2a2a"} />
+            </div>
+
+            <div style={{ marginBottom: "24px" }}>
+              <label style={{ color: "#888", fontSize: "12px", fontWeight: 700, letterSpacing: "2px", textTransform: "uppercase", display: "block", marginBottom: "8px" }}>Contraseña</label>
+              <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="••••••"
+                style={{ width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "12px", padding: "14px 16px", color: "#fff", fontSize: "15px", outline: "none", boxSizing: "border-box" as any }}
+                onFocus={(e) => e.target.style.borderColor = "#ffb928"} onBlur={(e) => e.target.style.borderColor = "#2a2a2a"} />
+            </div>
+
+            {loginError && <p style={{ color: "#f87171", fontSize: "14px", marginBottom: "16px" }}>{loginError}</p>}
+
+            <button type="submit" style={{ width: "100%", background: "#ffb928", color: "#000", fontWeight: 900, fontSize: "16px", padding: "15px", borderRadius: "12px", border: "none", cursor: "pointer", fontFamily: "'Barlow Condensed', sans-serif", letterSpacing: "2px", textTransform: "uppercase" as any }}>
+              ENTRAR AL SISTEMA
+            </button>
+          </form>
+
+          <div style={{ marginTop: "32px", padding: "20px", background: "#1a1a1a", borderRadius: "12px", border: "1px solid #2a2a2a" }}>
+            <p style={{ color: "#555", fontSize: "13px", marginBottom: "8px" }}>Credenciales de prueba:</p>
+            <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "14px" }}>Admin: <span style={{ color: "#fff" }}>admin</span> / <span style={{ color: "#fff" }}>123456</span></p>
+          </div>
+
+          <div style={{ marginTop: "24px", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px" }}>
+            {[{ icon: Shield, label: "Seguro" }, { icon: Zap, label: "Rápido" }, { icon: Bell, label: "Alertas" }, { icon: Award, label: "Premium" }].map(({ icon: Icon, label }) => (
+              <div key={label} style={{ background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 16px", display: "flex", alignItems: "center", gap: "10px" }}>
+                <Icon size={16} color="#ffb928" />
+                <span style={{ color: "#888", fontSize: "13px", fontWeight: 600 }}>{label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}
   // ============ MAIN APP ============
   const S: any = {
     app: { minHeight: "100vh", background: "#0d0d0d", color: "#fff", display: "flex", fontFamily: "'Barlow', 'Arial', sans-serif", position: "relative" },
@@ -442,20 +505,21 @@ export default function App() {
 
       {/* SIDEBAR */}
       <aside style={S.sidebar}>
-        <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-            <div style={S.logoIcon}><Dumbbell size={22} color="#000" /></div>
-            <div>
-              <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "18px", letterSpacing: "2px", color: "#fff" }}>POWER GYM</div>
-              <div style={{ fontSize: "11px", color: "#555", fontWeight: 600 }}>{currentUser?.role === "admin" ? "Administrador" : "Miembro"}</div>
-            </div>
-          </div>
-          {isMobile && (
-            <button onClick={() => setSidebarOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "#888" }}>
-              <X size={20} />
-            </button>
-          )}
-        </div>
+  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" }}>
+    <div>
+      <BrandLogo subtitle={false} />
+      <div style={{ fontSize: "11px", color: "#555", fontWeight: 600, marginTop: "4px" }}>
+        {currentUser?.role === "admin" ? "Administrador" : "Miembro"}
+      </div>
+    </div>
+
+    {isMobile && (
+      <button onClick={() => setSidebarOpen(false)} style={{ background: "none", border: "none", cursor: "pointer", color: "#888" }}>
+        <X size={20} />
+      </button>
+    )}
+  </div>
+
         <div style={S.userCard}>
           <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#a3e635", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "10px" }}>
             <span style={{ fontWeight: 900, color: "#000", fontSize: "16px" }}>{currentUser?.full_name?.[0]?.toUpperCase()}</span>
