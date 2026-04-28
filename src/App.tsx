@@ -1333,7 +1333,7 @@ export default function App() {
                 <div key={title} style={{ ...S.card, borderTop: `3px solid ${color}` }}>
                   <div style={{ width: "48px", height: "48px", borderRadius: "14px", background: `${color}20`, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "16px" }}>
                     <Icon size={22} color={color} />
-                  </div>zz
+                  </div>
                   <h3 style={{ fontWeight: 900, color: "#fff", fontSize: "16px", marginBottom: "8px" }}>{title}</h3>
                   <p style={{ color: "#888", fontSize: "13px", lineHeight: 1.6 }}>{desc}</p>
                 </div>
