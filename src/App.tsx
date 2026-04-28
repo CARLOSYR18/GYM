@@ -84,7 +84,8 @@ const classes: GymClass[] = [
 ];
 
 const plans = [
-  { name: "Semanal", price: 35, description: "Acceso libre por 7 días", color: "#ffb928", features: ["Acceso sala principal", "Vestuarios", "App móvil"] },
+  { name: "Semanal", price: 35, description: "Acceso libre por 7 días", color: "#a3e635",
+ features: ["Acceso sala principal", "Vestuarios", "App móvil"] },
   { name: "Mensual", price: 120, description: "Acceso completo por 30 días", color: "#84cc16", features: ["Todo Semanal", "Clases grupales", "Seguimiento básico"] },
   { name: "Trimestral", price: 300, description: "Ahorro especial por 3 meses", color: "#65a30d", features: ["Todo Mensual", "Descuento 17%", "1 sesión personal"] },
   { name: "VIP", price: 180, description: "Rutina personalizada + asesoría", color: "#4ade80", features: ["Todo incluido", "Entrenador personal", "Plan nutricional", "Prioridad en clases"] },
@@ -138,7 +139,8 @@ function BrandLogo({ subtitle = true }: { subtitle?: boolean }) {
           width: "48px",
           height: "48px",
           borderRadius: "12px",
-          background: "#ffb928",
+          background: "#a3e635",
+
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -372,7 +374,7 @@ if (!isLoggedIn) {
         gridTemplateColumns: "1fr 1fr",
         borderRadius: "24px",
         overflow: "hidden",
-        boxShadow: "0 0 80px rgba(255,185,40,0.3)",
+        boxShadow: "0 0 80px rgba(163,230,53,0.3)",
         border: "1px solid rgba(255,185,40,0.16)",
       }}>
         <div className="login-image-col" style={{ position: "relative", minHeight: "600px", overflow: "hidden" }}>
@@ -401,7 +403,8 @@ if (!isLoggedIn) {
 
             <div>
               <p style={{
-                color: "#ffb928",
+                color: "#a3e635",
+
                 fontWeight: 700,
                 fontSize: "14px",
                 letterSpacing: "4px",
@@ -428,9 +431,10 @@ if (!isLoggedIn) {
               <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
                 {["Socios", "Pagos", "Clases", "Reportes"].map((f) => (
                   <span key={f} style={{
-                    background: "rgba(255,185,40,0.15)",
+                    background: "rgba(163,230,53,0.15)",
                     border: "1px solid rgba(255,185,40,0.35)",
-                    color: "#ffb928",
+                    color: "#a3e635",
+
                     padding: "6px 16px",
                     borderRadius: "100px",
                     fontSize: "13px",
@@ -454,7 +458,8 @@ if (!isLoggedIn) {
           </div>
 
           <p style={{
-            color: "#ffb928",
+            color: "#a3e635",
+
             fontWeight: 700,
             fontSize: "13px",
             letterSpacing: "3px",
@@ -551,7 +556,8 @@ if (!isLoggedIn) {
 
             <button type="submit" style={{
               width: "100%",
-              background: "#ffb928",
+              background: "#a3e635",
+
               color: "#000",
               fontWeight: 900,
               fontSize: "16px",
@@ -578,7 +584,8 @@ if (!isLoggedIn) {
               Credenciales de prueba:
             </p>
 
-            <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "14px" }}>
+            <p style={{ color: "#a3e635",
+ fontWeight: 700, fontSize: "14px" }}>
               Admin: <span style={{ color: "#fff" }}>admin</span> / <span style={{ color: "#fff" }}>123456</span>
             </p>
           </div>
@@ -622,24 +629,26 @@ const S: any = {
     transition: "transform 0.3s ease",
   },
   logo: { display: "flex", alignItems: "center", gap: "12px", marginBottom: "28px", padding: "0 8px" },
-  logoIcon: { width: "42px", height: "42px", borderRadius: "12px", background: "#ffb928", display: "flex", alignItems: "center", justifyContent: "center" },
+  logoIcon: { width: "42px", height: "42px", borderRadius: "12px", background: "#a3e635",
+ display: "flex", alignItems: "center", justifyContent: "center" },
   userCard: { background: "#1a1a1a", borderRadius: "14px", padding: "16px", marginBottom: "24px", border: "1px solid #2a2a2a" },
   navBtn: (active: boolean): React.CSSProperties => ({
-    width: "100%",
-    display: "flex",
-    alignItems: "center",
-    gap: "12px",
-    padding: "11px 14px",
-    borderRadius: "10px",
-    border: "none",
-    cursor: "pointer",
-    fontSize: "14px",
-    fontWeight: 600,
-    transition: "all 0.2s",
-    background: active ? "#ffb928" : "transparent",
-    color: active ? "#000" : "#888",
-    textAlign: "left",
-  }),
+  width: "100%",
+  display: "flex",
+  alignItems: "center",
+  gap: "12px",
+  padding: "11px 14px",
+  borderRadius: "10px",
+  border: "none",
+  cursor: "pointer",
+  fontSize: "14px",
+  fontWeight: 600,
+  transition: "all 0.2s",
+  background: active ? "#ffb928" : "transparent",
+  color: active ? "#000" : "#888",
+  textAlign: "left",
+}),
+
   main: { flex: 1, padding: isMobile ? "16px 16px 90px" : "32px", overflowY: "auto", minWidth: 0 },
   header: { display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "24px" },
   card: { background: "#161616", border: "1px solid #222", borderRadius: "18px", padding: isMobile ? "16px" : "24px" },
@@ -652,7 +661,8 @@ const S: any = {
   }),
   badge: (status: Member["status"]): React.CSSProperties => {
     const colors = {
-      Activo: { bg: "rgba(255,185,40,0.15)", color: "#ffb928", border: "rgba(255,185,40,0.3)" },
+      Activo: { bg: "rgba(163,230,53,0.15)", color: "#a3e635",
+ border: "rgba(163,230,53,0.3)" },
       Vencido: { bg: "rgba(248,113,113,0.15)", color: "#f87171", border: "rgba(248,113,113,0.3)" },
       Pendiente: { bg: "rgba(251,191,36,0.15)", color: "#fbbf24", border: "rgba(251,191,36,0.3)" },
     };
@@ -669,9 +679,11 @@ const S: any = {
   },
   input: { width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 14px", color: "#fff", fontSize: "14px", outline: "none", boxSizing: "border-box" as any },
   select: { width: "100%", background: "#1a1a1a", border: "1px solid #2a2a2a", borderRadius: "10px", padding: "12px 14px", color: "#fff", fontSize: "14px", outline: "none", boxSizing: "border-box" as any },
-  btnPrimary: { width: "100%", background: "#ffb928", color: "#000", fontWeight: 900, fontSize: "14px", padding: "13px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase" as any },
+  btnPrimary: { width: "100%", background: "#a3e635",
+ color: "#000", fontWeight: 900, fontSize: "14px", padding: "13px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase" as any },
   btnDanger: { background: "rgba(248,113,113,0.15)", color: "#f87171", border: "1px solid rgba(248,113,113,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
-  btnSuccess: { background: "rgba(255,185,40,0.15)", color: "#ffb928", border: "1px solid rgba(255,185,40,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
+  btnSuccess: { background: "rgba(163,230,53,0.15)", color: "#a3e635",
+ border: "1px solid rgba(163,230,53,0.3)", padding: "7px 14px", borderRadius: "8px", cursor: "pointer", fontWeight: 700, fontSize: "13px" },
   table: { width: "100%", borderCollapse: "collapse" as any, fontSize: "14px" },
   th: { textAlign: "left" as any, padding: "12px 16px", color: "#555", fontWeight: 600, fontSize: "12px", textTransform: "uppercase" as any, letterSpacing: "1px", borderBottom: "1px solid #222" },
   td: { padding: "14px 16px", borderBottom: "1px solid #1a1a1a", verticalAlign: "middle" as any },
@@ -725,7 +737,8 @@ const S: any = {
   </div>
 
   <div style={S.userCard}>
-    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#ffb928", display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "10px" }}>
+    <div style={{ width: "40px", height: "40px", borderRadius: "50%", background: "#a3e635",
+ display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "10px" }}>
       <span style={{ fontWeight: 900, color: "#000", fontSize: "16px" }}>{currentUser?.full_name?.[0]?.toUpperCase()}</span>
     </div>
 
@@ -735,9 +748,10 @@ const S: any = {
     <span style={{
       display: "inline-block",
       marginTop: "8px",
-      background: "rgba(255,185,40,0.15)",
-      color: "#ffb928",
-      border: "1px solid rgba(255,185,40,0.3)",
+      background: "rgba(163,230,53,0.15)",
+      color: "#a3e635",
+
+      border: "1px solid rgba(163,230,53,0.3)",
       padding: "3px 10px",
       borderRadius: "100px",
       fontSize: "11px",
@@ -788,7 +802,8 @@ const S: any = {
             <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "#1a1a1a", border: "1px solid #2a2a2a", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }}>
               <Bell size={16} color="#888" />
             </div>
-         <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "#ffb928", display: "flex", alignItems: "center", justifyContent: "center" }}>
+         <div style={{ width: "38px", height: "38px", borderRadius: "50%", background: "#a3e635",
+ display: "flex", alignItems: "center", justifyContent: "center" }}>
 
               <span style={{ fontWeight: 900, color: "#000", fontSize: "15px" }}>{currentUser?.full_name?.[0]?.toUpperCase()}</span>
             </div>
@@ -802,7 +817,8 @@ const S: any = {
       <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%)" }} />
       <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "12px", letterSpacing: "3px", textTransform: "uppercase" }}>Bienvenido</p>
+        <p style={{ color: "#a3e635",
+ fontWeight: 700, fontSize: "12px", letterSpacing: "3px", textTransform: "uppercase" }}>Bienvenido</p>
         <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "28px" : "40px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>
           {currentUser.full_name}
         </h3>
@@ -840,8 +856,9 @@ const S: any = {
             {members.slice(0, 5).map((m) => (
               <div key={m.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", background: "#1a1a1a", borderRadius: "12px", padding: "12px 14px" }}>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px", minWidth: 0 }}>
-                  <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(255,185,40,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                    <span style={{ fontWeight: 900, color: "#ffb928", fontSize: "14px" }}>{m.name[0]}</span>
+                  <div style={{ width: "34px", height: "34px", borderRadius: "50%", background: "rgba(163,230,53,0.15)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
+                    <span style={{ fontWeight: 900, color: "#a3e635",
+ fontSize: "14px" }}>{m.name[0]}</span>
                   </div>
                   <div style={{ minWidth: 0 }}>
                     <div style={{ fontWeight: 700, color: "#fff", fontSize: "14px", overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}>{m.name}</div>
@@ -887,11 +904,13 @@ const S: any = {
         <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?w=1200&q=80" alt="gym" style={{ width: "100%", height: "100%", objectFit: "cover", position: "absolute", inset: 0 }} />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(120deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.4) 70%, transparent 100%)" }} />
         <div style={{ position: "relative", zIndex: 2, padding: isMobile ? "24px 20px" : "36px 40px", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-          <p style={{ color: "#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "8px" }}>BE STRONG · BE BEAUTIFUL</p>
+          <p style={{ color: "#a3e635",
+ fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "8px" }}>BE STRONG · BE BEAUTIFUL</p>
           <h2 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "28px" : "clamp(28px, 3.5vw, 46px)", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", lineHeight: 1.0, margin: "0 0 12px" }}>
             Entrena fuerte,<br />controla tu plan
           </h2>
-          <button onClick={() => setActiveTab("Mi Progreso")} style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#ffb928", color: "#000", fontWeight: 900, fontSize: "13px", padding: "11px 20px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", width: "fit-content" }}>
+          <button onClick={() => setActiveTab("Mi Progreso")} style={{ display: "inline-flex", alignItems: "center", gap: "8px", background: "#a3e635",
+ color: "#000", fontWeight: 900, fontSize: "13px", padding: "11px 20px", borderRadius: "10px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", width: "fit-content" }}>
             Mi progreso <ArrowRight size={14} />
           </button>
         </div>
@@ -928,7 +947,7 @@ const S: any = {
             <div style={{ color: "#555", fontSize: "12px", marginTop: "4px" }}>Plan: <span style={{ color: "#888", fontWeight: 700 }}>{myMember?.plan || "No asignado"}</span></div>
           </div>
           {daysRemaining !== null && (
-            <div style={{ background: daysRemaining > 7 ? "rgba(255,185,40,0.1)" : "rgba(248,113,113,0.1)", border: `1px solid ${daysRemaining > 7 ? "rgba(255,185,40,0.25)" : "rgba(248,113,113,0.25)"}`, borderRadius: "10px", padding: "8px 14px", width: "100%" }}>
+            <div style={{ background: daysRemaining > 7 ? "rgba(255,185,40,0.1)" : "rgba(248,113,113,0.1)", border: `1px solid ${daysRemaining > 7 ? "rgba(163,230,53,0.25)" : "rgba(248,113,113,0.25)"}`, borderRadius: "10px", padding: "8px 14px", width: "100%" }}>
               <span style={{ color: daysRemaining > 7 ? "#ffb928" : "#f87171", fontWeight: 700, fontSize: "13px" }}>
                 {daysRemaining > 0 ? `${daysRemaining} días restantes` : "¡Vencido!"}
               </span>
@@ -961,7 +980,8 @@ const S: any = {
       <div style={S.card}>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
           <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "18px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", margin: 0 }}>Clases destacadas</h3>
-          <button onClick={() => setActiveTab("Clases")} style={{ background: "none", border: "none", color: "#ffb928", fontSize: "12px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>Ver todas <ArrowRight size={13} /></button>
+          <button onClick={() => setActiveTab("Clases")} style={{ background: "none", border: "none", color: "#a3e635",
+ fontSize: "12px", fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}>Ver todas <ArrowRight size={13} /></button>
         </div>
         <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
           {featuredClasses.map((cls) => (
@@ -972,7 +992,8 @@ const S: any = {
                 <div style={{ color: "#555", fontSize: "11px" }}>{cls.trainer} · {cls.time}</div>
               </div>
               <div style={{ padding: "0 12px", textAlign: "right", flexShrink: 0 }}>
-                <span style={{ background: "rgba(255,185,40,0.15)", color: "#ffb928", border: "1px solid rgba(255,185,40,0.3)", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>{cls.category}</span>
+                <span style={{ background: "rgba(163,230,53,0.15)", color: "#a3e635",
+ border: "1px solid rgba(163,230,53,0.3)", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>{cls.category}</span>
                 <div style={{ color: "#555", fontSize: "10px", marginTop: "3px" }}>{cls.enrolled}/{cls.capacity}</div>
               </div>
             </div>
@@ -1072,7 +1093,8 @@ const S: any = {
     {plans.map((plan, i) => (
       <div key={plan.name} style={{ ...S.card, borderTop: `3px solid ${plan.color}`, position: "relative", overflow: "hidden" }}>
         {i === 3 && (
-          <div style={{ position: "absolute", top: "14px", right: "14px", background: "#ffb928", color: "#000", fontSize: "10px", fontWeight: 900, padding: "3px 8px", borderRadius: "100px", letterSpacing: "1px" }}>
+          <div style={{ position: "absolute", top: "14px", right: "14px", background: "#a3e635",
+ color: "#000", fontSize: "10px", fontWeight: 900, padding: "3px 8px", borderRadius: "100px", letterSpacing: "1px" }}>
             POPULAR
           </div>
         )}
@@ -1135,13 +1157,15 @@ const S: any = {
 
           <div style={{ position: "absolute", bottom: "14px", left: "14px", right: "14px", display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
             <div>
-              <span style={{ background: "rgba(255,185,40,0.15)", color: "#ffb928", border: "1px solid rgba(255,185,40,0.3)", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>
+              <span style={{ background: "rgba(163,230,53,0.15)", color: "#a3e635",
+ border: "1px solid rgba(163,230,53,0.3)", padding: "2px 8px", borderRadius: "100px", fontSize: "10px", fontWeight: 700 }}>
                 {cls.category}
               </span>
               <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 900, fontSize: "22px", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>{cls.name}</h3>
             </div>
 
-            <div style={{ background: "#ffb928", borderRadius: "50%", width: "38px", height: "38px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>
+            <div style={{ background: "#a3e635",
+ borderRadius: "50%", width: "38px", height: "38px", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", flexShrink: 0 }}>
               <Play size={15} color="#000" fill="#000" />
             </div>
           </div>
@@ -1155,14 +1179,16 @@ const S: any = {
 
           <div style={{ textAlign: "center" }}>
             <div style={{ color: "#555", fontSize: "11px" }}>Horario</div>
-            <div style={{ fontWeight: 700, color: "#ffb928", fontSize: "13px" }}>{cls.time}</div>
+            <div style={{ fontWeight: 700, color: "#a3e635",
+ fontSize: "13px" }}>{cls.time}</div>
           </div>
 
           <div style={{ textAlign: "right" }}>
             <div style={{ color: "#555", fontSize: "11px" }}>Inscritos</div>
             <div style={{ fontWeight: 700, color: "#fff", fontSize: "13px" }}>{cls.enrolled}/{cls.capacity}</div>
             <div style={{ marginTop: "4px", height: "4px", width: "70px", background: "#222", borderRadius: "100px" }}>
-              <div style={{ height: "100%", width: `${(cls.enrolled / cls.capacity) * 100}%`, background: cls.enrolled / cls.capacity > 0.8 ? "#f87171" : "#ffb928", borderRadius: "100px" }} />
+              <div style={{ height: "100%", width: `${(cls.enrolled / cls.capacity) * 100}%`, background: cls.enrolled / cls.capacity > 0.8 ? "#f87171" : "#a3e635",
+ borderRadius: "100px" }} />
             </div>
           </div>
         </div>
@@ -1221,7 +1247,8 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <p style={{ color: 
-"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase" }}>Tu membresía</p>
+"#a3e635",
+ fontWeight: 700, fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase" }}>Tu membresía</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: "4px 0 0" }}>
                   {myMember ? `Plan ${myMember.plan}` : "Sin plan activo"}
                 </h3>
@@ -1262,7 +1289,8 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <p style={{ color: 
-"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Historial financiero</p>
+"#a3e635",
+ fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Historial financiero</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "36px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Mis Pagos</h3>
               </div>
             </div>
@@ -1318,17 +1346,20 @@ const S: any = {
                         <p style={{ color: "#555", fontSize: "10px", fontWeight: 700, textTransform: "uppercase", letterSpacing: "2px", marginBottom: "3px" }}>Vence el</p>
                         <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "24px", fontWeight: 900, color: "#fff", margin: "0 0 3px" }}>{myMember.end_date}</p>
                         <p style={{ color: daysRemaining !== null && daysRemaining <= 5 ? "#f87171" : 
-"#ffb928", fontSize: "13px", fontWeight: 700 }}>
+"#a3e635",
+ fontSize: "13px", fontWeight: 700 }}>
                           {daysRemaining !== null ? (daysRemaining > 0 ? `${daysRemaining} días restantes` : "¡Membresía vencida!") : "—"}
                         </p>
                       </div>
                     </div>
                     <div style={{ background: "rgba(163,230,53,0.06)", border: "1px solid rgba(163,230,53,0.2)", borderRadius: "16px", padding: "16px" }}>
                       <p style={{ color: 
-"#ffb928", fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "6px" }}>💡 Recordatorio</p>
+"#a3e635",
+ fontWeight: 700, fontSize: "12px", textTransform: "uppercase", letterSpacing: "2px", marginBottom: "6px" }}>💡 Recordatorio</p>
                       <p style={{ color: "#888", fontSize: "13px", lineHeight: 1.5, margin: "0 0 10px" }}>Renueva antes del vencimiento para no interrumpir tu acceso.</p>
                       <button onClick={() => setActiveTab("Medios de Pago")} style={{ width: "100%", background: 
-"#ffb928", color: "#000", fontWeight: 900, fontSize: "12px", padding: "10px", borderRadius: "8px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
+"#a3e635",
+ color: "#000", fontWeight: 900, fontSize: "12px", padding: "10px", borderRadius: "8px", border: "none", cursor: "pointer", letterSpacing: "1px", textTransform: "uppercase", display: "flex", alignItems: "center", justifyContent: "center", gap: "6px" }}>
                         Ver cómo pagar <ArrowRight size={12} />
                       </button>
                     </div>
@@ -1352,14 +1383,16 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.35) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <p style={{ color: 
-"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>¿Cómo quieres pagar?</p>
+"#a3e635",
+ fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>¿Cómo quieres pagar?</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "36px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Medios de Pago</h3>
               </div>
             </div>
             <div style={{ display: "grid", gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)", gap: "16px", marginBottom: "16px" }}>
               {[
                 { title: "Efectivo", subtitle: "Pago presencial", desc: "Acércate a recepción y realiza tu pago directamente.", icon: Banknote, color: 
-"#ffb928", steps: ["Visita recepción", "Indica tu nombre o DNI", "Paga en efectivo", "Recibe tu comprobante"], detail: "Lun – Sáb · 6:00 AM – 10:00 PM", badge: "Disponible hoy" },
+"#a3e635",
+ steps: ["Visita recepción", "Indica tu nombre o DNI", "Paga en efectivo", "Recibe tu comprobante"], detail: "Lun – Sáb · 6:00 AM – 10:00 PM", badge: "Disponible hoy" },
                 { title: "Yape", subtitle: "Pago por app", desc: "Escanea el QR o envía al número y manda captura.", icon: Smartphone, color: "#a855f7", steps: ["Abre tu app Yape", "Escanea QR o busca el número", "Ingresa el monto exacto", "Envía captura al admin"], detail: "📱 +51 999 999 999", badge: "Rápido y fácil" },
                 { title: "Transferencia", subtitle: "Depósito bancario", desc: "Transfiere desde tu banco previa coordinación.", icon: CreditCard, color: "#06b6d4", steps: ["Solicita datos bancarios", "Realiza la transferencia", "Envía voucher al admin", "Espera confirmación"], detail: "Consultar en recepción", badge: "Previa coordinación" },
               ].map(({ title, subtitle, desc, icon: Icon, color, steps, detail, badge }) => (
@@ -1418,7 +1451,8 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <p style={{ color: 
-"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Estamos aquí para ti</p>
+"#a3e635",
+ fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Estamos aquí para ti</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Horarios</h3>
               </div>
             </div>
@@ -1445,7 +1479,8 @@ const S: any = {
                         {open && !isMobile && (
                           <div style={{ marginTop: "4px", height: "4px", background: "#1e1e1e", borderRadius: "100px", overflow: "hidden", width: "120px" }}>
                             <div style={{ height: "100%", width: `${(hours / 16) * 100}%`, background: 
-"#ffb928", borderRadius: "100px" }} />
+"#a3e635",
+ borderRadius: "100px" }} />
                           </div>
                         )}
                       </div>
@@ -1462,7 +1497,8 @@ const S: any = {
 "#ffb928" }} />
                   </div>
                   <p style={{ color: 
-"#ffb928", fontWeight: 900, fontSize: "15px", margin: "0 0 3px" }}>ABIERTO AHORA</p>
+"#a3e635",
+ fontWeight: 900, fontSize: "15px", margin: "0 0 3px" }}>ABIERTO AHORA</p>
                   <p style={{ color: "#555", fontSize: "12px", margin: 0 }}>Ven y entrena hoy</p>
                 </div>
                 {[
@@ -1492,7 +1528,8 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 36px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <p style={{ color: 
-"#ffb928", fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Tu evolución</p>
+"#a3e635",
+ fontWeight: 700, fontSize: "11px", letterSpacing: "4px", textTransform: "uppercase", marginBottom: "6px" }}>Tu evolución</p>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Mi Progreso</h3>
               </div>
             </div>
@@ -1500,7 +1537,8 @@ const S: any = {
               {[
                 { label: "Sesiones", value: "12", icon: Flame, color: "#f97316", trend: "+3 vs mes ant." },
                 { label: "Calorías", value: "4,800", icon: Zap, color: 
-"#ffb928", trend: "+12% semana" },
+"#a3e635",
+ trend: "+12% semana" },
                 { label: "Horas", value: "18h", icon: Clock, color: "#818cf8", trend: "Meta: 24h" },
                 { label: "Racha", value: "5 días", icon: Trophy, color: "#fbbf24", trend: "¡Récord!" },
               ].map(({ label, value, icon: Icon, color, trend }) => (
@@ -1519,13 +1557,15 @@ const S: any = {
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                   <h4 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "16px", fontWeight: 900, textTransform: "uppercase", letterSpacing: "1px", color: "#fff", margin: 0 }}>Sesiones esta semana</h4>
                   <span style={{ background: "rgba(163,230,53,0.12)", color: 
-"#ffb928", border: "1px solid rgba(163,230,53,0.25)", padding: "4px 12px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>6 de 7</span>
+"#a3e635",
+ border: "1px solid rgba(163,230,53,0.25)", padding: "4px 12px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>6 de 7</span>
                 </div>
                 <div style={{ display: "flex", alignItems: "flex-end", gap: "8px", height: "120px" }}>
                   {[{ d: "L", h: 80, min: 55 }, { d: "M", h: 60, min: 40 }, { d: "X", h: 90, min: 65 }, { d: "J", h: 45, min: 30 }, { d: "V", h: 100, min: 70 }, { d: "S", h: 70, min: 50 }, { d: "D", h: 0, min: 0 }].map(({ d, h, min }) => (
                     <div key={d} style={{ flex: 1, display: "flex", flexDirection: "column", alignItems: "center", gap: "6px" }}>
                       {h > 0 && <span style={{ color: 
-"#ffb928", fontSize: "9px", fontWeight: 700 }}>{min}m</span>}
+"#a3e635",
+ fontSize: "9px", fontWeight: 700 }}>{min}m</span>}
                       <div style={{ width: "100%", background: h > 0 ? 
 "#ffb928" : "#1e1e1e", borderRadius: "6px 6px 0 0", height: `${Math.max(h, 4)}%`, opacity: h > 0 ? 1 : 0.4 }} />
                       <span style={{ color: h > 0 ? "#888" : "#333", fontSize: "11px", fontWeight: 700 }}>{d}</span>
@@ -1567,7 +1607,8 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.3) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Tu Rutina Semanal</h3>
-                <p style={{ color: "#ffb928", fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Programa de fuerza e hipertrofia</p>
+                <p style={{ color: "#a3e635",
+ fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Programa de fuerza e hipertrofia</p>
               </div>
             </div>
             <div style={S.grid2}>
@@ -1577,7 +1618,8 @@ const S: any = {
                   <div style={{ padding: "16px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                     <h4 style={{ fontWeight: 900, color: "#fff", fontSize: "15px", marginBottom: "3px" }}>{ex.name}</h4>
                     <p style={{ color: "#555", fontSize: "12px", marginBottom: "8px" }}>{ex.muscles}</p>
-                    <span style={{ background: "#a3e63520", color: "#ffb928", border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "12px", fontWeight: 700, display: "inline-block", width: "fit-content" }}>{ex.sets}</span>
+                    <span style={{ background: "#a3e63520", color: "#a3e635",
+ border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "12px", fontWeight: 700, display: "inline-block", width: "fit-content" }}>{ex.sets}</span>
                   </div>
                 </div>
               ))}
@@ -1593,7 +1635,8 @@ const S: any = {
               <div style={{ position: "absolute", inset: 0, background: "linear-gradient(90deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 100%)" }} />
               <div style={{ position: "absolute", inset: 0, padding: isMobile ? "20px" : "28px 32px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
                 <h3 style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: isMobile ? "26px" : "38px", fontWeight: 900, fontStyle: "italic", color: "#fff", textTransform: "uppercase", margin: 0 }}>Plan Nutricional</h3>
-                <p style={{ color: "#ffb928", fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Alimentación para tu objetivo</p>
+                <p style={{ color: "#a3e635",
+ fontSize: "13px", fontWeight: 700, marginTop: "4px" }}>Alimentación para tu objetivo</p>
               </div>
             </div>
             <div style={S.grid3}>
@@ -1639,7 +1682,8 @@ const S: any = {
                 <div style={{ fontSize: "36px", marginBottom: "10px" }}>{icon}</div>
                 <h3 style={{ fontWeight: 900, color: "#fff", fontSize: "15px", marginBottom: "6px" }}>{title}</h3>
                 <p style={{ color: "#555", fontSize: "13px", lineHeight: 1.5 }}>{desc}</p>
-                {earned && <span style={{ display: "inline-block", marginTop: "10px", background: "#a3e63520", color: "#ffb928", border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>OBTENIDO</span>}
+                {earned && <span style={{ display: "inline-block", marginTop: "10px", background: "#a3e63520", color: "#a3e635",
+ border: "1px solid #a3e63330", padding: "3px 10px", borderRadius: "100px", fontSize: "11px", fontWeight: 700 }}>OBTENIDO</span>}
               </div>
             ))}
           </div>
